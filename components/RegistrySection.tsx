@@ -1,7 +1,16 @@
 "use client";
 
+/**
+ * RegistrySection Component — Traditional Shagun & Cash Registry
+ * 
+ * Updates based on user feedback:
+ * - Corrected spelling from "Sagan" to "Shagun".
+ * - Color palette: Midnight Navy, Gold, Cream, and Soft Blush.
+ * - 1-Click copy for Venmo and Zelle with visual feedback.
+ */
+
 import { useState } from "react";
-import { Gift, Heart, Copy, Check, ExternalLink, Sparkles, Home, Palmtree } from "lucide-react";
+import { Heart, Copy, Check, ExternalLink, Sparkles, Home, Palmtree } from "lucide-react";
 
 export default function RegistrySection() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
@@ -20,8 +29,8 @@ export default function RegistrySection() {
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center space-x-2 text-champagne mb-3">
           <Sparkles className="w-4 h-4" />
-          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-heritage">
-            Traditional Sagan &amp; Registry
+          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
+            Traditional Shagun &amp; Registry
           </span>
           <Sparkles className="w-4 h-4" />
         </div>
@@ -35,16 +44,16 @@ export default function RegistrySection() {
       </div>
 
       {/* Purpose Statement Card */}
-      <div className="max-w-3xl mx-auto bg-surface/80 rounded-3xl p-6 sm:p-8 border border-borderLight shadow-xs text-center mb-16">
-        <div className="w-12 h-12 rounded-full bg-background border border-champagne flex items-center justify-center mx-auto mb-4 text-heritage">
-          <Heart className="w-5 h-5 text-heritage fill-heritage/20" />
+      <div className="max-w-3xl mx-auto bg-surface/85 rounded-3xl p-6 sm:p-8 border border-borderLight shadow-xs text-center mb-16">
+        <div className="w-12 h-12 rounded-full bg-white border border-champagne flex items-center justify-center mx-auto mb-4 text-navy">
+          <Heart className="w-5 h-5 text-navy fill-navy/20" />
         </div>
         <h3 className="font-serif text-2xl font-medium text-charcoal mb-3">
-          A Note on Gifts &amp; Traditional Sagan
+          A Note on Gifts &amp; Traditional Shagun
         </h3>
         <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed font-light mb-4">
           Because we have lived together and established our household, we kindly request no boxed gifts. In accordance with
-          beloved Punjabi traditions, Sagan (monetary blessings) is customary and warmly welcomed.
+          beloved Punjabi traditions, Shagun (monetary blessings) is customary and warmly welcomed.
         </p>
         <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed font-light">
           To bypass credit card processing surcharges and third-party fees, you may send your blessings directly
@@ -55,9 +64,9 @@ export default function RegistrySection() {
       {/* Funds Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
         {/* Fund 1: Honeymoon */}
-        <div className="bg-background rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm flex flex-col justify-between hover:border-champagne transition-colors">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm flex flex-col justify-between hover:border-champagne transition-colors">
           <div>
-            <div className="w-12 h-12 rounded-2xl bg-surface border border-champagne/60 flex items-center justify-center mb-4 text-heritage">
+            <div className="w-12 h-12 rounded-2xl bg-surface border border-champagne/60 flex items-center justify-center mb-4 text-navy">
               <Palmtree className="w-6 h-6" />
             </div>
             <p className="text-[11px] uppercase tracking-widest text-champagne-dark font-semibold mb-1">
@@ -72,14 +81,14 @@ export default function RegistrySection() {
             </p>
           </div>
           <div className="pt-4 border-t border-borderLight/60">
-            <span className="text-xs text-heritage font-medium">Contribute via Venmo or Zelle below</span>
+            <span className="text-xs text-navy font-medium">Contribute via Venmo or Zelle below</span>
           </div>
         </div>
 
         {/* Fund 2: New Home */}
-        <div className="bg-background rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm flex flex-col justify-between hover:border-champagne transition-colors">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm flex flex-col justify-between hover:border-champagne transition-colors">
           <div>
-            <div className="w-12 h-12 rounded-2xl bg-surface border border-champagne/60 flex items-center justify-center mb-4 text-heritage">
+            <div className="w-12 h-12 rounded-2xl bg-surface border border-champagne/60 flex items-center justify-center mb-4 text-navy">
               <Home className="w-6 h-6" />
             </div>
             <p className="text-[11px] uppercase tracking-widest text-champagne-dark font-semibold mb-1">
@@ -94,7 +103,7 @@ export default function RegistrySection() {
             </p>
           </div>
           <div className="pt-4 border-t border-borderLight/60">
-            <span className="text-xs text-heritage font-medium">Contribute via Venmo or Zelle below</span>
+            <span className="text-xs text-navy font-medium">Contribute via Venmo or Zelle below</span>
           </div>
         </div>
       </div>
@@ -106,12 +115,12 @@ export default function RegistrySection() {
           <div className="mb-4">
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#008CFF] tracking-tight">Venmo</span>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-background px-2.5 py-1 rounded-full border border-borderLight">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-white px-2.5 py-1 rounded-full border border-borderLight">
                 Zero Fees
               </span>
             </div>
             <p className="text-xs text-charcoal/80 mb-2">Send directly to Pavin&apos;s Venmo account:</p>
-            <p className="font-mono text-sm font-semibold text-charcoal bg-background px-3 py-2 rounded-lg border border-borderLight select-all">
+            <p className="font-mono text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all">
               @pavin-virdee
             </p>
           </div>
@@ -128,13 +137,13 @@ export default function RegistrySection() {
             </a>
             <button
               onClick={() => handleCopy("pavin-virdee", "Venmo handle")}
-              className="py-2.5 px-3 rounded-xl bg-background border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
+              className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
               title="Copy Venmo Handle"
             >
               {copiedItem === "Venmo handle" ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-heritage" />
-                  <span className="text-heritage">Copied!</span>
+                  <Check className="w-3.5 h-3.5 text-navy" />
+                  <span className="text-navy">Copied!</span>
                 </>
               ) : (
                 <>
@@ -151,12 +160,12 @@ export default function RegistrySection() {
           <div className="mb-4">
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#7414CA] tracking-tight">Zelle</span>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-background px-2.5 py-1 rounded-full border border-borderLight">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-white px-2.5 py-1 rounded-full border border-borderLight">
                 Direct Bank Transfer
               </span>
             </div>
             <p className="text-xs text-charcoal/80 mb-2">Transfer via banking app to couple&apos;s phone/email:</p>
-            <p className="font-mono text-xs sm:text-sm font-semibold text-charcoal bg-background px-3 py-2 rounded-lg border border-borderLight select-all break-all">
+            <p className="font-mono text-xs sm:text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all break-all">
               pavin.virdee@gmail.com
             </p>
           </div>

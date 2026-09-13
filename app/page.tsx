@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background relative selection:bg-heritage selection:text-background">
+    <main className="min-h-screen bg-background relative selection:bg-navy selection:text-background">
       {/* Sticky Top Navigation */}
       <Navbar isPlaying={isPlaying} toggleAudio={toggleAudio} />
 

@@ -143,7 +143,7 @@ export default function RsvpForm() {
       <div className="text-center max-w-2xl mx-auto mb-14">
         <div className="inline-flex items-center space-x-2 text-champagne mb-3">
           <Sparkles className="w-4 h-4" />
-          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-heritage">
+          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
             Join the Celebration
           </span>
           <Sparkles className="w-4 h-4" />
@@ -162,13 +162,13 @@ export default function RsvpForm() {
       <div className="bg-surface/90 rounded-3xl p-6 sm:p-10 border border-borderLight shadow-md">
         {status === "success" ? (
           <div className="text-center py-12 px-4 animate-fade-in">
-            <div className="w-16 h-16 rounded-full bg-heritage/10 border-2 border-heritage flex items-center justify-center mx-auto mb-6 text-heritage">
+            <div className="w-16 h-16 rounded-full bg-navy/10 border-2 border-navy flex items-center justify-center mx-auto mb-6 text-navy">
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="heading-display text-3xl sm:text-4xl text-charcoal mb-3">
               Thank You, {formData.fullName}!
             </h3>
-            <p className="font-serif text-lg sm:text-xl text-heritage italic mb-4">
+            <p className="font-serif text-lg sm:text-xl text-navy italic mb-4">
               Your Soft RSVP &amp; Mailing Address have been warmly received.
             </p>
             <p className="text-xs sm:text-sm text-charcoal/75 max-w-lg mx-auto leading-relaxed mb-8">
@@ -196,13 +196,13 @@ export default function RsvpForm() {
             {/* Section 1: Contact Information */}
             <div>
               <h3 className="font-serif text-xl font-medium text-charcoal mb-4 flex items-center space-x-2">
-                <User className="w-4 h-4 text-heritage" />
+                <User className="w-4 h-4 text-navy" />
                 <span>Primary Guest Contact</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                    Full Name <span className="text-heritage">*</span>
+                    Full Name <span className="text-navy">*</span>
                   </label>
                   <input
                     type="text"
@@ -210,13 +210,13 @@ export default function RsvpForm() {
                     placeholder="e.g. Jasbir Singh Virdee"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                    Email Address <span className="text-heritage">*</span>
+                    Email Address <span className="text-navy">*</span>
                   </label>
                   <input
                     type="email"
@@ -224,13 +224,13 @@ export default function RsvpForm() {
                     placeholder="e.g. jasbir@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                    Mobile Phone <span className="text-heritage">*</span>
+                    Mobile Phone <span className="text-navy">*</span>
                   </label>
                   <input
                     type="tel"
@@ -238,7 +238,7 @@ export default function RsvpForm() {
                     placeholder="e.g. (408) 555-0199"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   />
                 </div>
               </div>
@@ -248,7 +248,7 @@ export default function RsvpForm() {
             <div className="pt-4 border-t border-borderLight/60">
               <div className="mb-4">
                 <h3 className="font-serif text-xl font-medium text-charcoal flex items-center space-x-2">
-                  <MapPin className="w-4 h-4 text-heritage" />
+                  <MapPin className="w-4 h-4 text-navy" />
                   <span>Physical Mailing Address</span>
                 </h3>
                 <p className="text-xs text-mutedText mt-0.5 font-light">
@@ -260,7 +260,7 @@ export default function RsvpForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="sm:col-span-2">
                     <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                      Street Address <span className="text-heritage">*</span>
+                      Street Address <span className="text-navy">*</span>
                     </label>
                     <input
                       type="text"
@@ -268,7 +268,7 @@ export default function RsvpForm() {
                       placeholder="e.g. 123 Blossom Hill Rd"
                       value={formData.streetAddress}
                       onChange={(e) => setFormData({ ...formData, streetAddress: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                   <div>
@@ -280,7 +280,7 @@ export default function RsvpForm() {
                       placeholder="e.g. Apt 4B"
                       value={formData.aptSuite}
                       onChange={(e) => setFormData({ ...formData, aptSuite: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                 </div>
@@ -288,7 +288,7 @@ export default function RsvpForm() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                      City <span className="text-heritage">*</span>
+                      City <span className="text-navy">*</span>
                     </label>
                     <input
                       type="text"
@@ -296,12 +296,12 @@ export default function RsvpForm() {
                       placeholder="e.g. San Jose"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                      State / Province <span className="text-heritage">*</span>
+                      State / Province <span className="text-navy">*</span>
                     </label>
                     <input
                       type="text"
@@ -309,12 +309,12 @@ export default function RsvpForm() {
                       placeholder="e.g. CA"
                       value={formData.state}
                       onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                      ZIP / Postal Code <span className="text-heritage">*</span>
+                      ZIP / Postal Code <span className="text-navy">*</span>
                     </label>
                     <input
                       type="text"
@@ -322,7 +322,7 @@ export default function RsvpForm() {
                       placeholder="e.g. 95123"
                       value={formData.zipCode}
                       onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                   <div>
@@ -334,7 +334,7 @@ export default function RsvpForm() {
                       placeholder="United States"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                     />
                   </div>
                 </div>
@@ -344,7 +344,7 @@ export default function RsvpForm() {
             {/* Section 3: Attendance & Party Count */}
             <div className="pt-4 border-t border-borderLight/60">
               <h3 className="font-serif text-xl font-medium text-charcoal mb-4 flex items-center space-x-2">
-                <Users className="w-4 h-4 text-heritage" />
+                <Users className="w-4 h-4 text-navy" />
                 <span>Attendance &amp; Party Details</span>
               </h3>
 
@@ -356,7 +356,7 @@ export default function RsvpForm() {
                   <select
                     value={formData.guestCount}
                     onChange={(e) => setFormData({ ...formData, guestCount: Number(e.target.value) })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   >
                     {[1, 2, 3, 4, 5, 6].map((num) => (
                       <option key={num} value={num}>
@@ -377,7 +377,7 @@ export default function RsvpForm() {
                           type="checkbox"
                           checked={formData.eventsAttending.includes(evt)}
                           onChange={() => handleEventToggle(evt)}
-                          className="w-4 h-4 rounded border-borderLight text-heritage focus:ring-heritage"
+                          className="w-4 h-4 rounded border-borderLight text-navy focus:ring-navy"
                         />
                         <span>{evt}</span>
                       </label>
@@ -403,7 +403,7 @@ export default function RsvpForm() {
                         onClick={() => handleDietaryToggle(opt)}
                         className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                           isSelected
-                            ? "bg-heritage text-white border border-heritage shadow-2xs"
+                            ? "bg-navy text-white border border-navy shadow-2xs"
                             : "bg-background text-charcoal/80 border border-borderLight hover:border-champagne"
                         }`}
                       >
@@ -417,7 +417,7 @@ export default function RsvpForm() {
                   placeholder="Other dietary specifics (e.g. Halal, dairy sensitivity)"
                   value={formData.customDietary}
                   onChange={(e) => setFormData({ ...formData, customDietary: e.target.value })}
-                  className="w-full px-4 py-2 rounded-xl bg-background border border-borderLight text-xs text-charcoal focus:outline-none focus:border-heritage"
+                  className="w-full px-4 py-2 rounded-xl bg-background border border-borderLight text-xs text-charcoal focus:outline-none focus:border-navy"
                 />
               </div>
 
@@ -431,7 +431,7 @@ export default function RsvpForm() {
                     placeholder="e.g. Mundian To Bach Ke / Diljit Dosanjh"
                     value={formData.songRequest}
                     onChange={(e) => setFormData({ ...formData, songRequest: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   />
                 </div>
 
@@ -444,7 +444,7 @@ export default function RsvpForm() {
                     placeholder="Warm wishes or notes for Rani &amp; Pavin..."
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-heritage transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   />
                 </div>
               </div>
@@ -455,7 +455,7 @@ export default function RsvpForm() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full py-4 rounded-2xl bg-heritage text-[#FAF8F5] text-xs uppercase tracking-[0.25em] font-semibold hover:bg-heritage-light transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-60"
+                className="w-full py-4 rounded-2xl bg-navy text-[#FAF8F5] text-xs uppercase tracking-[0.25em] font-semibold hover:bg-navy-light transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-60"
               >
                 {status === "submitting" ? (
                   <>

@@ -82,7 +82,7 @@ export default function CultureGuideSection() {
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center space-x-2 text-champagne mb-3">
           <Sparkles className="w-4 h-4" />
-          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-heritage">
+          <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
             Welcoming First-Time Guests
           </span>
           <Sparkles className="w-4 h-4" />
@@ -127,7 +127,7 @@ export default function CultureGuideSection() {
                   </div>
                 </div>
                 <div
-                  className={`p-1.5 rounded-full border border-champagne/60 text-heritage transition-transform duration-300 shrink-0 ml-2 ${
+                  className={`p-1.5 rounded-full border border-champagne/60 text-navy transition-transform duration-300 shrink-0 ml-2 ${
                     isOpen ? "rotate-180 bg-surface" : "rotate-0"
                   }`}
                 >
@@ -139,7 +139,7 @@ export default function CultureGuideSection() {
                 <div className="px-5 sm:px-6 pb-6 pt-2 text-sm text-charcoal/85 border-t border-borderLight/60 animate-fade-in space-y-4">
                   <p className="leading-relaxed font-light">{item.details}</p>
                   <div className="bg-background/80 rounded-xl p-4 border border-borderLight space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-heritage">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-navy">
                       Helpful Tips for Guests:
                     </p>
                     <ul className="space-y-1.5">

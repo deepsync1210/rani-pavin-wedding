@@ -66,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${plusJakartaSans.variable}`}>
-      <body className="min-h-screen bg-background text-charcoal antialiased selection:bg-heritage selection:text-background">
+      <body className="min-h-screen bg-background text-charcoal antialiased selection:bg-navy selection:text-background">
         {children}
       </body>
     </html>

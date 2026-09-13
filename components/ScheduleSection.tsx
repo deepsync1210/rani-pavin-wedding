@@ -1,46 +1,48 @@
 "use client";
 
-import { Clock, MapPin, CalendarPlus, Info, Sparkles, ExternalLink } from "lucide-react";
+/**
+ * ScheduleSection Component — Event Itinerary & Calendar Integration
+ * 
+ * Updates based on user feedback:
+ * - Removed pre-wedding private ceremonies banner.
+ * - Event 1: "Morning Wedding Ceremony", 9:30 AM – 1:30 PM, Sikh Gurdwara San Jose (3636 Murillo Ave, San Jose, CA 95148).
+ * - Event 2: "Wedding Reception", 6:00 PM, Atria Banquet Hall & Event Center (113 Bernal Rd, San Jose, CA 95119).
+ * - Removed timeline "Program Flow" from both cards.
+ * - Updated Google Maps links to official shortlinks provided by user.
+ * - Color palette: Midnight Navy, Gold, Cream, and Blush.
+ */
+
+import { Clock, MapPin, CalendarPlus, Sparkles, ExternalLink } from "lucide-react";
 
 export default function ScheduleSection() {
   const events = [
     {
+      badge: "Morning Wedding Ceremony",
       title: "Anand Karaj & Langar",
       subtitle: "The Sacred Sikh Marriage Ceremony & Community Meal",
       date: "Saturday, June 19, 2027",
-      time: "8:30 AM – 1:30 PM",
-      location: "San Jose Gurdwara (Sikh Gurdwara San Jose)",
-      address: "2741 Aborn Rd, San Jose, CA 95121",
-      mapUrl: "https://maps.google.com/?q=Sikh+Gurdwara+San+Jose+2741+Aborn+Rd+San+Jose+CA",
+      time: "9:30 AM – 1:30 PM",
+      location: "Sikh Gurdwara San Jose",
+      address: "3636 Murillo Ave, San Jose, CA 95148",
+      mapUrl: "https://maps.app.goo.gl/ipyjwzuP9xgx9JDq8",
       attire: "Traditional Indian Formal or Modest Western Formal (Comfortable for seated floor carpet; heads must be covered inside Darbar Sahib)",
-      timeline: [
-        { time: "8:30 AM", label: "Baraat & Welcoming (Milni)" },
-        { time: "9:15 AM", label: "Morning Tea & Breakfast" },
-        { time: "10:00 AM", label: "Anand Karaj (Marriage Ceremony in Darbar Sahib)" },
-        { time: "12:00 PM", label: "Langar (Traditional Vegetarian Community Lunch)" },
-      ],
       calendarTitle: "Rani & Pavin's Anand Karaj Ceremony",
-      calendarDetails: "Anand Karaj and Langar at San Jose Gurdwara. Attire: Traditional Indian Formal or Modest Western Formal.",
-      startTime: "20270619T153000Z", // 8:30 AM PDT is 15:30 UTC
+      calendarDetails: "Anand Karaj and Langar at Sikh Gurdwara San Jose (3636 Murillo Ave, San Jose, CA 95148).",
+      startTime: "20270619T163000Z", // 9:30 AM PDT is 16:30 UTC
       endTime: "20270619T203000Z",   // 1:30 PM PDT is 20:30 UTC
     },
     {
+      badge: "Evening Reception",
       title: "Wedding Reception",
       subtitle: "Dinner, Dancing, & Celebrations",
       date: "Saturday, June 19, 2027",
-      time: "6:00 PM – Late",
-      location: "South Bay Celebration Venue",
-      address: "Silicon Valley / South Bay, California (Formal venue details on formal invitations)",
-      mapUrl: "https://maps.google.com/?q=San+Jose+California",
+      time: "6:00 PM",
+      location: "Atria Banquet Hall & Event Center",
+      address: "113 Bernal Rd, San Jose, CA 95119",
+      mapUrl: "https://maps.app.goo.gl/5QNZdG3qEuojFZGV9",
       attire: "Black-Tie Optional / Glamorous Indian Formal (Lehengas, Sherwanis, Suits, Evening Gowns)",
-      timeline: [
-        { time: "6:00 PM", label: "Cocktail Hour & Passed Hors d'oeuvres" },
-        { time: "7:15 PM", label: "Grand Couple Entrance & Speeches" },
-        { time: "8:00 PM", label: "Lavish Dinner Service" },
-        { time: "9:00 PM – Late", label: "Open Dance Floor, Live DJ & Bhangra" },
-      ],
       calendarTitle: "Rani & Pavin's Wedding Reception",
-      calendarDetails: "Evening reception celebration, dinner, and dancing in the South Bay.",
+      calendarDetails: "Evening wedding reception at Atria Banquet Hall & Event Center (113 Bernal Rd, San Jose, CA 95119).",
       startTime: "20270620T010000Z", // 6:00 PM PDT is 01:00 UTC (June 20 UTC)
       endTime: "20270620T070000Z",   // 12:00 AM PDT is 07:00 UTC
     },
@@ -58,7 +60,7 @@ export default function ScheduleSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-champagne mb-3">
             <Sparkles className="w-4 h-4" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-heritage">
+            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
               Event Itinerary
             </span>
             <Sparkles className="w-4 h-4" />
@@ -68,24 +70,8 @@ export default function ScheduleSection() {
           </h2>
           <div className="gold-divider w-24 mx-auto my-6" />
           <p className="font-serif text-lg sm:text-xl text-charcoal/80 italic">
-            Saturday, June 19, 2027 • Two Distinct Celebrations
+            Saturday, June 19, 2027 &bull; Two Distinct Celebrations
           </p>
-        </div>
-
-        {/* Private Events Notice Banner */}
-        <div className="max-w-4xl mx-auto mb-12 bg-background/90 rounded-2xl p-5 border border-champagne/60 shadow-xs flex items-start space-x-4">
-          <div className="p-2 rounded-full bg-surface border border-champagne/50 shrink-0 text-heritage mt-0.5">
-            <Info className="w-4 h-4" />
-          </div>
-          <div className="text-sm text-charcoal/85">
-            <p className="font-medium text-heritage uppercase text-xs tracking-wider mb-0.5">
-              Pre-Wedding Ceremonies Note
-            </p>
-            <p className="font-light leading-relaxed">
-              Private family pre-wedding ceremonies (including Paath, Mehndi, Maiyan, and Jaggo) are coordinated directly
-              with individual parties. The public ceremonies below are open to all wedding guests!
-            </p>
-          </div>
         </div>
 
         {/* Event Cards */}
@@ -93,13 +79,13 @@ export default function ScheduleSection() {
           {events.map((event, idx) => (
             <div
               key={idx}
-              className="bg-background rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white rounded-3xl p-6 sm:p-8 border border-borderLight shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Event Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3.5 py-1 rounded-full bg-surface border border-champagne/60 text-[11px] font-semibold uppercase tracking-widest text-heritage">
-                    {idx === 0 ? "Morning Ceremony" : "Evening Reception"}
+                  <span className="px-3.5 py-1 rounded-full bg-surface border border-champagne/60 text-[11px] font-semibold uppercase tracking-widest text-navy">
+                    {event.badge}
                   </span>
                   <span className="text-xs font-serif italic text-mutedText">
                     {event.date}
@@ -115,13 +101,13 @@ export default function ScheduleSection() {
                 </p>
 
                 {/* Meta details */}
-                <div className="space-y-3.5 text-sm text-charcoal/80 pb-6 border-b border-borderLight">
+                <div className="space-y-4 text-sm text-charcoal/85 pb-6 border-b border-borderLight/80">
                   <div className="flex items-start space-x-3">
-                    <Clock className="w-4 h-4 text-heritage shrink-0 mt-0.5" />
+                    <Clock className="w-4 h-4 text-navy shrink-0 mt-0.5" />
                     <span className="font-medium">{event.time}</span>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <MapPin className="w-4 h-4 text-heritage shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-navy shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-charcoal">{event.location}</p>
                       <p className="text-xs text-mutedText mt-0.5">{event.address}</p>
@@ -129,7 +115,7 @@ export default function ScheduleSection() {
                         href={event.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-1 text-xs text-heritage hover:underline font-medium mt-1"
+                        className="inline-flex items-center space-x-1 text-xs text-navy hover:underline font-medium mt-1.5"
                       >
                         <span>View on Google Maps</span>
                         <ExternalLink className="w-3 h-3" />
@@ -138,27 +124,9 @@ export default function ScheduleSection() {
                   </div>
                 </div>
 
-                {/* Timeline Breakdown */}
-                <div className="py-6">
-                  <p className="text-[11px] uppercase tracking-widest font-semibold text-mutedText mb-3">
-                    Program Flow
-                  </p>
-                  <div className="space-y-2.5">
-                    {event.timeline.map((item, i) => (
-                      <div key={i} className="flex items-baseline space-x-3 text-xs sm:text-sm">
-                        <span className="font-serif font-medium text-heritage w-20 shrink-0 text-right">
-                          {item.time}
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-champagne shrink-0" />
-                        <span className="text-charcoal/85">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Attire note */}
-                <div className="bg-surface/80 rounded-xl p-4 text-xs text-charcoal/85 mb-6 border border-borderLight/60">
-                  <span className="font-semibold text-heritage uppercase tracking-wider block mb-1">
+                {/* Attire Note */}
+                <div className="bg-surface/75 rounded-2xl p-4 text-xs text-charcoal/85 my-6 border border-borderLight/60">
+                  <span className="font-semibold text-navy uppercase tracking-wider block mb-1">
                     Attire &amp; Dress Code:
                   </span>
                   {event.attire}
@@ -171,9 +139,9 @@ export default function ScheduleSection() {
                   href={createGoogleCalendarLink(event)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-xl border border-champagne text-xs uppercase tracking-wider text-charcoal font-medium hover:bg-surface hover:border-heritage transition-colors shadow-2xs"
+                  className="w-full flex items-center justify-center space-x-2 py-3.5 px-4 rounded-xl border border-champagne text-xs uppercase tracking-wider text-charcoal font-medium hover:bg-surface hover:border-navy transition-colors shadow-2xs"
                 >
-                  <CalendarPlus className="w-4 h-4 text-heritage" />
+                  <CalendarPlus className="w-4 h-4 text-navy" />
                   <span>Add to Google Calendar</span>
                 </a>
               </div>

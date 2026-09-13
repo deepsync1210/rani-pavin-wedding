@@ -37,6 +37,52 @@
 
 ---
 
+## Work Log: Revision 1.1 (Music & Google Sheets Isolation)
+**Date**: September 13, 2026  
+**Git Branch**: `main`  
+**Commit Hash**: `c099768`, `e8939ff`
+
+### Summary of Objectives
+1. **Audio Player Overhaul**:
+   - Swapped out Spotify stream with local MP3: *Babe Bhangra Paunde Ne* by Gurdas Maan (`public/audio/babe_bhangra_pounde_ne.mp3`).
+   - Converted to headless background audio player: removed floating bottom-right widget and external Spotify buttons.
+   - Retained elegant sound wave toggle in the top navigation bar with auto-play on first user touch/scroll.
+2. **Dedicated Google Sheets Isolation**:
+   - Isolated RSVP responses into a brand-new tab **`Website RSVPs`** within the Master Google Spreadsheet.
+   - Updated Google Apps Script deployment URL (`https://script.google.com/macros/s/AKfycbx09zRvh926xOiZ5Y1wDV1a8THW8bwbmbTCaLxmCeoa2-jgdtdkXzVUE-E_5s9-1mep/exec`) in `.env.local`.
+
+---
+
+## Work Log: Revision 1.2 (Visual Polish & User Image Feedback)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Palette Refinement (Midnight Navy & Blush Pink)**:
+   - Updated primary brand color from heritage green to **Midnight Navy (`#162846`)** and accent to **Soft Blush Pink (`#F8E8EB`)**, paired with **Warm Alabaster (`#FAF8F5`)** and **Warm Champagne Gold (`#C5A880`)**.
+2. **Navbar**:
+   - Scaled monogram circle to 48px (`w-12 h-12`) with proper padding.
+   - Corrected terminology to **"SHAGUN & REGISTRY"**.
+3. **Hero Section**:
+   - Added Gurmukhi blessing: **ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ** &bull; **&ldquo;ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ&rdquo;** (*One Light in Two Bodies*).
+   - Changed location badge strictly to **"San Jose, California"**.
+4. **Our Story**:
+   - Replaced placeholder story with the couple's real gate encounter & missed connection narrative from WithJoy.
+   - Replaced photo cards:
+     - Card 1: `early_days.png` labeled **"Early Days"**.
+     - Card 2: `night_city.jpg` labeled **"Midwest to West Coast"**.
+     - Card 3: `real_proposal.jpg` labeled **"The Proposal"**.
+   - Removed generic quotes, card subtext, and bottom signature circle.
+5. **Schedule & Venues**:
+   - Removed private ceremony banner and timeline flow breakdowns.
+   - Morning Ceremony: **Sikh Gurdwara San Jose** (`3636 Murillo Ave, San Jose, CA 95148`) — [Google Maps](https://maps.app.goo.gl/ipyjwzuP9xgx9JDq8).
+   - Reception: **Atria Banquet Hall & Event Center** (`113 Bernal Rd, San Jose, CA 95119`) — [Google Maps](https://maps.app.goo.gl/5QNZdG3qEuojFZGV9).
+6. **Registry & Forms**:
+   - Updated "Sagan" to **"Shagun"** throughout.
+   - Synchronized all form states, culture guides, and travel cards to the new Navy & Blush design language.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 
@@ -50,3 +96,4 @@ As the wedding approaches, the following automated workflows can be layered on t
    - Aggregate all song requests submitted via the RSVP form and automatically generate a collaborative Spotify playlist for the DJ.
 5. **Dynamic Personalized Guest Portal**:
    - Expand soft RSVP into personalized invitation lookups where guests enter their last name or phone number to view their tailored events (e.g. Mehndi, Jaggo, Sangeet for close family).
+

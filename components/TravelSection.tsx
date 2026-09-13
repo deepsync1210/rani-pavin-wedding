@@ -62,7 +62,7 @@ export default function TravelSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-champagne mb-3">
             <Sparkles className="w-4 h-4" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-heritage">
+            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
               Logistics &amp; Accommodations
             </span>
             <Sparkles className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function TravelSection() {
         {/* Airport Guidance */}
         <div className="mb-16">
           <div className="flex items-center space-x-2 mb-6">
-            <Plane className="w-5 h-5 text-heritage" />
+            <Plane className="w-5 h-5 text-navy" />
             <h3 className="font-serif text-2xl font-medium text-charcoal">Recommended Airports</h3>
           </div>
 
@@ -95,13 +95,13 @@ export default function TravelSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-serif text-2xl font-bold text-heritage tracking-wider">
+                    <span className="font-serif text-2xl font-bold text-navy tracking-wider">
                       {airport.code}
                     </span>
                     <span
                       className={`text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full ${
                         airport.recommended
-                          ? "bg-heritage text-[#FAF8F5]"
+                          ? "bg-navy text-[#FAF8F5]"
                           : "bg-surface text-mutedText border border-borderLight"
                       }`}
                     >
@@ -125,7 +125,7 @@ export default function TravelSection() {
         {/* Lodging & Accommodations Placeholders */}
         <div className="mb-16">
           <div className="flex items-center space-x-2 mb-6">
-            <Hotel className="w-5 h-5 text-heritage" />
+            <Hotel className="w-5 h-5 text-navy" />
             <h3 className="font-serif text-2xl font-medium text-charcoal">Accommodations &amp; Room Blocks</h3>
           </div>
 
@@ -136,7 +136,7 @@ export default function TravelSection() {
                 className="bg-background rounded-2xl p-6 border border-borderLight shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-surface border border-champagne/60 text-heritage inline-block mb-3">
+                  <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-surface border border-champagne/60 text-navy inline-block mb-3">
                     {hotel.status}
                   </span>
                   <h4 className="font-serif text-xl font-medium text-charcoal mb-1">
@@ -160,7 +160,7 @@ export default function TravelSection() {
         {/* Local Exploration Tip */}
         <div className="bg-background rounded-3xl p-6 sm:p-8 border border-champagne/50 shadow-xs max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-surface border border-champagne flex items-center justify-center shrink-0">
-            <Compass className="w-7 h-7 text-heritage" />
+            <Compass className="w-7 h-7 text-navy" />
           </div>
           <div>
             <h4 className="font-serif text-2xl font-medium text-charcoal mb-1">

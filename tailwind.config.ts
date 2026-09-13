@@ -10,20 +10,26 @@ const config: Config = {
     extend: {
       colors: {
         background: "#FAF8F5", // Warm Alabaster / Rice Paper
-        surface: "#F3EDE2",    // Soft Linen Cream
+        surface: "#F7F2EC",    // Soft Linen Cream
+        white: "#FFFFFF",
+        navy: {
+          light: "#263B66",
+          DEFAULT: "#162846",  // Royal Sikh Midnight Navy Blue
+          dark: "#0F1C33",
+        },
         champagne: {
           light: "#EADDC9",
           DEFAULT: "#C5A880",  // Muted Warm Champagne / Gold
           dark: "#A38558",
         },
-        heritage: {
-          light: "#2B584E",
-          DEFAULT: "#1C3B34",  // Deep Heritage Forest Green
-          dark: "#112521",
+        blush: {
+          light: "#FCF5F6",
+          DEFAULT: "#F8E8EB",  // Elegant Soft Romantic Light Pink
+          dark: "#E8BAC0",
         },
         charcoal: {
           light: "#27272A",
-          DEFAULT: "#18181B",  // Charcoal Slate / Near Black
+          DEFAULT: "#18181B",  // Charcoal Slate
           dark: "#09090B",
         },
         mutedText: "#71717A",  // Muted Zinc Grey
@@ -32,6 +38,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        gurmukhi: ["'Noto Serif Gurmukhi'", "var(--font-cormorant)", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
