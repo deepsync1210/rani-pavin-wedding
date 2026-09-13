@@ -1,5 +1,16 @@
 "use client";
 
+/**
+ * RsvpForm Component — Soft RSVP & Physical Mailing Address Collector
+ * 
+ * Purpose:
+ * - Collects guest headcount estimates for Saturday, June 19, 2027.
+ * - Collects physical mailing addresses for formal paper invitation suites.
+ * - Tracks dietary restrictions, song requests for the DJ, and warm blessings.
+ * - Submits asynchronously to /api/rsvp (server-side proxy to Google Sheets).
+ * - Fires a celebratory confetti animation upon successful submission.
+ */
+
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, MapPin, Mail, Phone, User, Users } from "lucide-react";

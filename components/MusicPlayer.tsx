@@ -1,5 +1,17 @@
 "use client";
 
+/**
+ * MusicPlayer Component — Ambient Background Audio Controller
+ * 
+ * Track: Kangna (Acoustic Mix) - Dr Zeus
+ * Spotify Reference: https://open.spotify.com/track/6JA6NDkQnD3DC6d5IMrNT7
+ * 
+ * Features:
+ * - Attempts audio playback on page load with fallback to first user click/touch.
+ * - Persistent floating audio pill with animated equalizer bars.
+ * - One-click play/pause and external link to Spotify.
+ */
+
 import { useState, useEffect, useRef } from "react";
 import { Music, Play, Pause, Volume2, VolumeX, ExternalLink } from "lucide-react";
 

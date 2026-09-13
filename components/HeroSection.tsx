@@ -1,5 +1,14 @@
 "use client";
 
+/**
+ * HeroSection Component — Editorial Wedding Announcement & Live Countdown
+ * 
+ * Purpose:
+ * - Displays full-viewport luxury editorial hero imagery.
+ * - Computes real-time live countdown timer (Days, Hours, Minutes, Seconds) to June 19, 2027.
+ * - Provides primary smooth-scroll call-to-actions (#rsvp and #schedule).
+ */
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Calendar, MapPin, ChevronDown, Heart } from "lucide-react";

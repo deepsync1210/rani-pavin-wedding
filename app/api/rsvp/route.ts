@@ -1,3 +1,13 @@
+/**
+ * Next.js API Route: /api/rsvp
+ * 
+ * Purpose:
+ * - Server-side proxy for forwarding guest RSVP and physical address submissions
+ *   to the Google Apps Script Webhook.
+ * - Bypasses browser CORS policy and follows 302 HTTP redirects issued by Google Apps Script.
+ * - Provides graceful fallback and mock simulation when testing locally.
+ */
+
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
