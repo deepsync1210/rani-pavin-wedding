@@ -77,7 +77,7 @@ export default function Navbar({ isPlaying = false, toggleAudio }: NavbarProps) 
             <button
               onClick={toggleAudio}
               className="flex items-center space-x-2 px-3 py-1.5 rounded-full border border-champagne/70 bg-surface/70 hover:bg-surface text-xs text-charcoal transition-all shadow-xs"
-              title={isPlaying ? "Mute Background Music" : "Play Kangna (Acoustic Mix)"}
+              title={isPlaying ? "Mute Background Music" : "Play Babe Bhangra Paunde Ne (Gurdas Maan)"}
             >
               {isPlaying ? (
                 <>

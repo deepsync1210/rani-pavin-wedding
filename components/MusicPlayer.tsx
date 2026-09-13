@@ -3,17 +3,17 @@
 /**
  * MusicPlayer Component — Ambient Background Audio Controller
  * 
- * Track: Kangna (Acoustic Mix) - Dr Zeus
- * Spotify Reference: https://open.spotify.com/track/6JA6NDkQnD3DC6d5IMrNT7
+ * Track: Babe Bhangra Paunde Ne - Gurdas Maan
+ * Embedded MP3: /audio/babe_bhangra_pounde_ne.mp3
  * 
  * Features:
  * - Attempts audio playback on page load with fallback to first user click/touch.
  * - Persistent floating audio pill with animated equalizer bars.
- * - One-click play/pause and external link to Spotify.
+ * - One-click play/pause and volume controls.
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Music, Play, Pause, Volume2, VolumeX, ExternalLink } from "lucide-react";
+import { Music, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -92,10 +92,10 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
 
   return (
     <>
-      {/* Hidden HTML5 Audio Element */}
+      {/* Embedded HTML5 Audio Element */}
       <audio
         ref={audioRef}
-        src="/audio/kangna-acoustic.mp3"
+        src="/audio/babe_bhangra_pounde_ne.mp3"
         loop
         preload="auto"
       />
@@ -106,7 +106,7 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
           {/* Subtle tooltip hint for first-time visitors */}
           {showTooltip && (
             <div className="absolute -top-10 right-0 bg-heritage text-[#FAF8F5] text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md whitespace-nowrap animate-bounce flex items-center space-x-1.5">
-              <span>🎵 Tap to enjoy background music</span>
+              <span>🎵 Tap to enjoy wedding music</span>
             </div>
           )}
 
@@ -121,9 +121,9 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
             </button>
 
             {/* Song Info */}
-            <div className="hidden sm:flex flex-col pr-1">
+            <div className="flex flex-col pr-2">
               <span className="text-[11px] font-medium text-charcoal flex items-center space-x-1.5">
-                <span>Kangna (Acoustic Mix)</span>
+                <span>Babe Bhangra Paunde Ne</span>
                 {isPlaying && (
                   <span className="flex items-center space-x-0.5">
                     <span className="w-0.5 h-2.5 bg-heritage animate-equalizer-1" />
@@ -133,20 +133,9 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
                 )}
               </span>
               <span className="text-[9px] text-mutedText uppercase tracking-wider">
-                Dr Zeus • Background Melody
+                Gurdas Maan • Wedding Celebration
               </span>
             </div>
-
-            {/* Spotify Link */}
-            <a
-              href="https://open.spotify.com/track/6JA6NDkQnD3DC6d5IMrNT7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 text-mutedText hover:text-[#1DB954] transition-colors"
-              title="Listen on Spotify"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
       </div>
