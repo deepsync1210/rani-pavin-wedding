@@ -367,7 +367,7 @@ export default function RsvpForm() {
                     onChange={(e) => setFormData({ ...formData, guestCount: Number(e.target.value) })}
                     className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
                   >
-                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                       <option key={num} value={num}>
                         {num} {num === 1 ? "Guest" : "Guests"}
                       </option>
