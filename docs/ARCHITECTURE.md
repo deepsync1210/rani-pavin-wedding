@@ -41,7 +41,7 @@ components/
  ├── HeroSection.tsx           # Full-screen viewport hero, imagery, live countdown to June 19, 2027
  ├── StorySection.tsx          # Narrative (Chicago to Bay Area) & 3-photo asymmetrical masonry grid
  ├── ScheduleSection.tsx       # Anand Karaj & Reception cards, timeline breakdown, Google Calendar sync
- ├── CultureGuideSection.tsx   # Sikh Gurdwara etiquette accordion (Rumāls, dress code, shoe removal, Langar)
+ ├── CultureGuideSection.tsx   # Sikh Gurdwara etiquette accordion (Rumals, dress code, shoe removal, Langar)
  ├── TravelSection.tsx         # Airport guidance (SJC primary, SFO, OAK) and South Bay lodging
  ├── RegistrySection.tsx       # Zero-fee Sagan blessings, Venmo & Zelle 1-click copy with toast
  ├── RsvpForm.tsx              # Soft RSVP + physical mailing address collector with confetti

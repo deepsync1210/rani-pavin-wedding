@@ -22,7 +22,7 @@
    - `HeroSection`: Viewport hero with countdown timer to Saturday, June 19, 2027.
    - `StorySection`: Chicago-to-Bay Area narrative and 3-photo asymmetrical editorial masonry grid.
    - `ScheduleSection`: Anand Karaj & Langar at San Jose Gurdwara, Evening Reception, timeline breakdown, and 1-click Google Calendar integration.
-   - `CultureGuideSection`: Interactive accordion outlining Gurdwara etiquette (Rumāls, modest floor seating, shoe removal, strict grounds etiquette, Anand Karaj, Langar).
+   - `CultureGuideSection`: Interactive accordion outlining Gurdwara etiquette (Rumals, modest floor seating, shoe removal, strict grounds etiquette, Anand Karaj, Langar).
    - `TravelSection`: Mineta San Jose International (SJC) primary airport guidance, SFO/OAK secondary, South Bay hotel room block placeholders.
    - `RegistrySection`: Traditional Sagan blessings, Honeymoon & New Home fund cards, direct Venmo (`@pavin-virdee`) and Zelle 1-click copy with toast confirmation.
    - `RsvpForm`: Soft RSVP headcount + full physical mailing address collector, party details, dietary notes, DJ song request, blessings, and confetti burst.

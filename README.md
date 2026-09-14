@@ -25,7 +25,7 @@ An editorial modern Sikh luxury wedding website built with **Next.js 14 (App Rou
    - Private family pre-wedding ceremony note.
    - 1-Click "Add to Google Calendar".
 5. **Sikh Cultural Guide & Gurdwara Etiquette**:
-   - Interactive accordion for first-time guests covering head coverings (Rumāls), modest floor seating attire, shoe removal, strict alcohol/tobacco prohibition, and the meaning of Anand Karaj & Langar.
+   - Interactive accordion for first-time guests covering head coverings (Rumals), modest floor seating attire, shoe removal, strict alcohol/tobacco prohibition, and the meaning of Anand Karaj & Langar.
 6. **Travel & Where to Stay**:
    - Recommended airports: Mineta San Jose International (SJC) primary (15-20 mins away), SFO, and OAK.
    - Hotel room block placeholders in San Jose / South Bay.

@@ -8,11 +8,11 @@ export default function CultureGuideSection() {
 
   const etiquetteItems = [
     {
-      title: "Head Coverings (Rumāls / Scarves)",
+      title: "Head Coverings (Rumals / Scarves)",
       icon: "👒",
       summary: "All guests cover their heads while inside the Gurdwara prayer hall (Darbar Sahib).",
       details:
-        "Head coverings are worn as a sign of humility, respect, and equality before the Guru Granth Sahib. If you don't have an Indian chunni/dupatta, turban, or scarf, complimentary clean head scarves (rumāls) are provided in dedicated baskets at the entrance for guests to borrow.",
+        "Head coverings are worn as a sign of humility, respect, and equality before the Guru Granth Sahib. If you don't have an Indian chunni/dupatta, turban, or scarf, complimentary clean head scarves (rumals) are provided in dedicated baskets at the entrance for guests to borrow.",
       tips: [
         "Bandanas, scarves, and dupattas are fully acceptable.",
         "Baseball caps, fedoras, and hats are not permitted inside the prayer hall.",
