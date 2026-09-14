@@ -192,6 +192,28 @@
 
 ---
 
+## Work Log: Revision 1.9 (Per-Event Attendance Table & RSVP Breakdown)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Interactive Per-Event RSVP Table**:
+   - Replaced the single party dropdown and event checkboxes with an elegant 3-column table:
+     - **Guests**: Select 1–10 guests (smartly zeroed out & disabled when RSVP is "No").
+     - **Event (June 19, 2027)**: Morning Wedding Ceremony (Gurdwara Sahib) & Evening Wedding Reception (Atria).
+     - **RSVP**: Interactive status dropdown (`Yes`, `Maybe`, `No`) with dynamic color indicators (emerald green for Yes, amber for Maybe, soft rose for No).
+2. **Dedicated Mobile Card Adaptation**:
+   - On screens < 640px, gracefully converts into stacked per-event cards with side-by-side Guest and RSVP controls to eliminate horizontal scrolling while maintaining large touch targets.
+3. **Underneath Attendance Comments Input**:
+   - Added an open text field directly beneath the table for special guest notes, party member names, infant accommodations, or arrival times.
+4. **Google Apps Script Ingestion (`Code.gs`) Upgrade**:
+   - Added granular per-event columns: `Ceremony RSVP`, `Ceremony Guests`, `Reception RSVP`, `Reception Guests`, `Total Estimated Party`, and `Attendance Comments / Notes`.
+   - Backward-compatible with existing Google Sheet submissions.
+5. **Localhost Verification**:
+   - Verified end-to-end on localhost:3000 across desktop (1440px) and mobile (375px) viewports with Playwright automated tests.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 

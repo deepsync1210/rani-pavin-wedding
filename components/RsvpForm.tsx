@@ -26,8 +26,10 @@ export default function RsvpForm() {
     state: "",
     zipCode: "",
     country: "United States",
-    guestCount: 2,
-    eventsAttending: ["Morning Wedding Ceremony", "Evening Reception"],
+    ceremonyRsvp: "Yes" as "Yes" | "Maybe" | "No",
+    ceremonyGuests: 2,
+    receptionRsvp: "Yes" as "Yes" | "Maybe" | "No",
+    receptionGuests: 2,
     eventComments: "",
     dietaryRestrictions: ["None"],
     customDietary: "",
@@ -40,14 +42,36 @@ export default function RsvpForm() {
 
   const dietaryOptions = ["Vegetarian", "Vegan", "Nut Allergy", "Gluten-Free", "None"];
 
-  const handleEventToggle = (eventName: string) => {
-    setFormData((prev) => {
-      const exists = prev.eventsAttending.includes(eventName);
-      const updated = exists
-        ? prev.eventsAttending.filter((e) => e !== eventName)
-        : [...prev.eventsAttending, eventName];
-      return { ...prev, eventsAttending: updated };
-    });
+  const handleCeremonyRsvpChange = (val: "Yes" | "Maybe" | "No") => {
+    setFormData((prev) => ({
+      ...prev,
+      ceremonyRsvp: val,
+      ceremonyGuests: val === "No" ? 0 : prev.ceremonyGuests === 0 ? 2 : prev.ceremonyGuests,
+    }));
+  };
+
+  const handleReceptionRsvpChange = (val: "Yes" | "Maybe" | "No") => {
+    setFormData((prev) => ({
+      ...prev,
+      receptionRsvp: val,
+      receptionGuests: val === "No" ? 0 : prev.receptionGuests === 0 ? 2 : prev.receptionGuests,
+    }));
+  };
+
+  const handleCeremonyGuestsChange = (count: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      ceremonyGuests: count,
+      ceremonyRsvp: count === 0 ? "No" : prev.ceremonyRsvp === "No" ? "Yes" : prev.ceremonyRsvp,
+    }));
+  };
+
+  const handleReceptionGuestsChange = (count: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      receptionGuests: count,
+      receptionRsvp: count === 0 ? "No" : prev.receptionRsvp === "No" ? "Yes" : prev.receptionRsvp,
+    }));
   };
 
   const handleDietaryToggle = (option: string) => {
@@ -92,6 +116,16 @@ export default function RsvpForm() {
     setStatus("submitting");
     setErrorMessage("");
 
+    const totalMaxParty = Math.max(
+      formData.ceremonyRsvp !== "No" ? Number(formData.ceremonyGuests) : 0,
+      formData.receptionRsvp !== "No" ? Number(formData.receptionGuests) : 0
+    );
+
+    const eventsSummary = [
+      `Ceremony: ${formData.ceremonyRsvp} (${formData.ceremonyRsvp === "No" ? "0" : formData.ceremonyGuests} Guests)`,
+      `Reception: ${formData.receptionRsvp} (${formData.receptionRsvp === "No" ? "0" : formData.receptionGuests} Guests)`,
+    ].join(", ");
+
     const payload = {
       fullName: formData.fullName.trim(),
       email: formData.email.trim(),
@@ -102,10 +136,14 @@ export default function RsvpForm() {
       state: formData.state.trim(),
       zipCode: formData.zipCode.trim(),
       country: formData.country.trim(),
-      guestCount: Number(formData.guestCount),
+      ceremonyRsvp: formData.ceremonyRsvp,
+      ceremonyGuests: formData.ceremonyRsvp === "No" ? 0 : Number(formData.ceremonyGuests),
+      receptionRsvp: formData.receptionRsvp,
+      receptionGuests: formData.receptionRsvp === "No" ? 0 : Number(formData.receptionGuests),
+      guestCount: totalMaxParty,
       eventsAttending: formData.eventComments.trim()
-        ? `${formData.eventsAttending.join(", ")} (Notes: ${formData.eventComments.trim()})`
-        : formData.eventsAttending.join(", ") || "None specified",
+        ? `${eventsSummary} (Notes: ${formData.eventComments.trim()})`
+        : eventsSummary,
       eventComments: formData.eventComments.trim(),
       dietaryRestrictions: [
         ...formData.dietaryRestrictions.filter((d) => d !== "None"),
@@ -178,11 +216,18 @@ export default function RsvpForm() {
               Thank You, {formData.fullName}!
             </h3>
             <p className="font-serif text-lg sm:text-xl text-navy italic mb-4">
-              Your Soft RSVP &amp; Mailing Address have been warmly received.
+              {formData.ceremonyRsvp === "No" && formData.receptionRsvp === "No"
+                ? "Your response has been received with warmest regards."
+                : "Your Soft RSVP & Mailing Address have been warmly received."}
             </p>
             <p className="text-xs sm:text-sm text-charcoal/75 max-w-lg mx-auto leading-relaxed mb-8">
-              We have noted your estimated party of {formData.guestCount} for June 19, 2027. We will be mailing
-              your formal wedding invitation suite closer to the event!
+              {formData.ceremonyRsvp === "No" && formData.receptionRsvp === "No"
+                ? "We will miss having you in person on June 19, 2027, but we are so thankful for your love and warm wishes!"
+                : `We have noted your estimated attendance for June 19, 2027 (Ceremony: ${formData.ceremonyRsvp}${
+                    formData.ceremonyRsvp !== "No" ? ` - ${formData.ceremonyGuests} guests` : ""
+                  }, Reception: ${formData.receptionRsvp}${
+                    formData.receptionRsvp !== "No" ? ` - ${formData.receptionGuests} guests` : ""
+                  }). We look forward to mailing your formal invitation closer to the date!`}
             </p>
             <button
               onClick={() => {
@@ -352,58 +397,267 @@ export default function RsvpForm() {
 
             {/* Section 3: Attendance & Party Count */}
             <div className="pt-4 border-t border-borderLight/60">
-              <h3 className="font-serif text-xl font-medium text-charcoal mb-4 flex items-center space-x-2">
-                <Users className="w-4 h-4 text-navy" />
-                <span>Attendance &amp; Party Details</span>
-              </h3>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-1">
+                <h3 className="font-serif text-xl font-medium text-charcoal flex items-center space-x-2">
+                  <Users className="w-4 h-4 text-navy" />
+                  <span>Attendance &amp; Event RSVP</span>
+                </h3>
+                <span className="text-xs text-mutedText font-medium">Saturday, June 19, 2027 • San Jose, CA</span>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
-                    Total Estimated Guests in Party
-                  </label>
-                  <select
-                    value={formData.guestCount}
-                    onChange={(e) => setFormData({ ...formData, guestCount: Number(e.target.value) })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                      <option key={num} value={num}>
-                        {num} {num === 1 ? "Guest" : "Guests"}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+              {/* Desktop & Tablet Table View */}
+              <div className="hidden sm:block overflow-hidden rounded-2xl border border-borderLight shadow-sm bg-white mb-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-stone-100/80 border-b border-borderLight/80 text-xs font-semibold uppercase tracking-wider text-charcoal/80">
+                      <th className="py-3.5 px-5 w-[26%]">Guests</th>
+                      <th className="py-3.5 px-5 w-[48%]">Event (June 19, 2027)</th>
+                      <th className="py-3.5 px-5 w-[26%]">RSVP</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-borderLight/60 bg-white">
+                    {/* Row 1: Morning Wedding Ceremony */}
+                    <tr className="transition-colors hover:bg-stone-50/60">
+                      <td className="py-4 px-5 align-middle">
+                        <select
+                          value={formData.ceremonyGuests}
+                          disabled={formData.ceremonyRsvp === "No"}
+                          onChange={(e) => handleCeremonyGuestsChange(Number(e.target.value))}
+                          aria-label="Guests for Morning Wedding Ceremony"
+                          className={`w-full px-3.5 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
+                            formData.ceremonyRsvp === "No"
+                              ? "bg-stone-100 border-borderLight/50 text-mutedText/50 cursor-not-allowed"
+                              : "bg-background border-borderLight text-charcoal focus:outline-none focus:border-navy"
+                          }`}
+                        >
+                          {formData.ceremonyRsvp === "No" ? (
+                            <option value={0}>0 Guests</option>
+                          ) : (
+                            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                              <option key={num} value={num}>
+                                {num} {num === 1 ? "Guest" : "Guests"}
+                              </option>
+                            ))
+                          )}
+                        </select>
+                      </td>
+                      <td className="py-4 px-5 align-middle">
+                        <div className="font-serif text-base font-semibold text-charcoal">
+                          Morning Wedding Ceremony
+                        </div>
+                        <div className="text-xs text-mutedText mt-0.5">
+                          Gurdwara Sahib of San Jose • 9:30 AM (Anand Karaj)
+                        </div>
+                      </td>
+                      <td className="py-4 px-5 align-middle">
+                        <select
+                          value={formData.ceremonyRsvp}
+                          onChange={(e) => handleCeremonyRsvpChange(e.target.value as "Yes" | "Maybe" | "No")}
+                          aria-label="RSVP for Morning Wedding Ceremony"
+                          className={`w-full px-3.5 py-2.5 rounded-xl border text-sm font-semibold transition-all focus:outline-none cursor-pointer ${
+                            formData.ceremonyRsvp === "Yes"
+                              ? "bg-emerald-50/80 border-emerald-300 text-emerald-900 focus:border-emerald-600"
+                              : formData.ceremonyRsvp === "Maybe"
+                              ? "bg-amber-50/80 border-amber-300 text-amber-900 focus:border-amber-600"
+                              : "bg-rose-50/80 border-rose-300 text-rose-900 focus:border-rose-600"
+                          }`}
+                        >
+                          <option value="Yes">Yes</option>
+                          <option value="Maybe">Maybe</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                    </tr>
 
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">
-                    Events You Plan to Attend (June 19, 2027)
-                  </label>
-                  <div className="space-y-2 mb-3">
-                    {["Morning Wedding Ceremony", "Evening Reception"].map((evt) => (
-                      <label key={evt} className="flex items-center space-x-2.5 text-xs sm:text-sm text-charcoal cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={formData.eventsAttending.includes(evt)}
-                          onChange={() => handleEventToggle(evt)}
-                          className="w-4 h-4 rounded border-borderLight text-navy focus:ring-navy"
-                        />
-                        <span>{evt}</span>
+                    {/* Row 2: Evening Wedding Reception */}
+                    <tr className="transition-colors hover:bg-stone-50/60">
+                      <td className="py-4 px-5 align-middle">
+                        <select
+                          value={formData.receptionGuests}
+                          disabled={formData.receptionRsvp === "No"}
+                          onChange={(e) => handleReceptionGuestsChange(Number(e.target.value))}
+                          aria-label="Guests for Evening Wedding Reception"
+                          className={`w-full px-3.5 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
+                            formData.receptionRsvp === "No"
+                              ? "bg-stone-100 border-borderLight/50 text-mutedText/50 cursor-not-allowed"
+                              : "bg-background border-borderLight text-charcoal focus:outline-none focus:border-navy"
+                          }`}
+                        >
+                          {formData.receptionRsvp === "No" ? (
+                            <option value={0}>0 Guests</option>
+                          ) : (
+                            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                              <option key={num} value={num}>
+                                {num} {num === 1 ? "Guest" : "Guests"}
+                              </option>
+                            ))
+                          )}
+                        </select>
+                      </td>
+                      <td className="py-4 px-5 align-middle">
+                        <div className="font-serif text-base font-semibold text-charcoal">
+                          Evening Wedding Reception
+                        </div>
+                        <div className="text-xs text-mutedText mt-0.5">
+                          Atria, San Jose • 6:00 PM (Cocktails, Dinner &amp; Celebration)
+                        </div>
+                      </td>
+                      <td className="py-4 px-5 align-middle">
+                        <select
+                          value={formData.receptionRsvp}
+                          onChange={(e) => handleReceptionRsvpChange(e.target.value as "Yes" | "Maybe" | "No")}
+                          aria-label="RSVP for Evening Wedding Reception"
+                          className={`w-full px-3.5 py-2.5 rounded-xl border text-sm font-semibold transition-all focus:outline-none cursor-pointer ${
+                            formData.receptionRsvp === "Yes"
+                              ? "bg-emerald-50/80 border-emerald-300 text-emerald-900 focus:border-emerald-600"
+                              : formData.receptionRsvp === "Maybe"
+                              ? "bg-amber-50/80 border-amber-300 text-amber-900 focus:border-amber-600"
+                              : "bg-rose-50/80 border-rose-300 text-rose-900 focus:border-rose-600"
+                          }`}
+                        >
+                          <option value="Yes">Yes</option>
+                          <option value="Maybe">Maybe</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Card View (Screens < 640px) */}
+              <div className="sm:hidden space-y-3.5 mb-4">
+                {/* Event 1 Mobile Card */}
+                <div className="p-4 rounded-2xl border border-borderLight bg-stone-50/40 space-y-3">
+                  <div>
+                    <div className="font-serif text-base font-semibold text-charcoal">
+                      Morning Wedding Ceremony
+                    </div>
+                    <div className="text-xs text-mutedText mt-0.5">
+                      Gurdwara Sahib of San Jose • 9:30 AM (Anand Karaj)
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    <div>
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-charcoal mb-1">
+                        Guests
                       </label>
-                    ))}
-                  </div>
-
-                  {/* Open text comment box per user feedback (img2) */}
-                  <div className="mt-2.5">
-                    <input
-                      type="text"
-                      placeholder="Additional attendance comments, guest names, or notes..."
-                      value={formData.eventComments}
-                      onChange={(e) => setFormData({ ...formData, eventComments: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-xs sm:text-sm text-charcoal focus:outline-none focus:border-navy transition-colors placeholder:text-mutedText/60"
-                    />
+                      <select
+                        value={formData.ceremonyGuests}
+                        disabled={formData.ceremonyRsvp === "No"}
+                        onChange={(e) => handleCeremonyGuestsChange(Number(e.target.value))}
+                        className={`w-full px-3 py-2 rounded-xl border text-xs font-medium transition-colors ${
+                          formData.ceremonyRsvp === "No"
+                            ? "bg-stone-100 border-borderLight/50 text-mutedText/50 cursor-not-allowed"
+                            : "bg-background border-borderLight text-charcoal focus:outline-none focus:border-navy"
+                        }`}
+                      >
+                        {formData.ceremonyRsvp === "No" ? (
+                          <option value={0}>0 Guests</option>
+                        ) : (
+                          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                            <option key={num} value={num}>
+                              {num} {num === 1 ? "Guest" : "Guests"}
+                            </option>
+                          ))
+                        )}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-charcoal mb-1">
+                        RSVP
+                      </label>
+                      <select
+                        value={formData.ceremonyRsvp}
+                        onChange={(e) => handleCeremonyRsvpChange(e.target.value as "Yes" | "Maybe" | "No")}
+                        className={`w-full px-3 py-2 rounded-xl border text-xs font-semibold transition-all focus:outline-none ${
+                          formData.ceremonyRsvp === "Yes"
+                            ? "bg-emerald-50/80 border-emerald-300 text-emerald-900"
+                            : formData.ceremonyRsvp === "Maybe"
+                            ? "bg-amber-50/80 border-amber-300 text-amber-900"
+                            : "bg-rose-50/80 border-rose-300 text-rose-900"
+                        }`}
+                      >
+                        <option value="Yes">Yes</option>
+                        <option value="Maybe">Maybe</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
+
+                {/* Event 2 Mobile Card */}
+                <div className="p-4 rounded-2xl border border-borderLight bg-stone-50/40 space-y-3">
+                  <div>
+                    <div className="font-serif text-base font-semibold text-charcoal">
+                      Evening Wedding Reception
+                    </div>
+                    <div className="text-xs text-mutedText mt-0.5">
+                      Atria, San Jose • 6:00 PM (Cocktails &amp; Dinner)
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    <div>
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-charcoal mb-1">
+                        Guests
+                      </label>
+                      <select
+                        value={formData.receptionGuests}
+                        disabled={formData.receptionRsvp === "No"}
+                        onChange={(e) => handleReceptionGuestsChange(Number(e.target.value))}
+                        className={`w-full px-3 py-2 rounded-xl border text-xs font-medium transition-colors ${
+                          formData.receptionRsvp === "No"
+                            ? "bg-stone-100 border-borderLight/50 text-mutedText/50 cursor-not-allowed"
+                            : "bg-background border-borderLight text-charcoal focus:outline-none focus:border-navy"
+                        }`}
+                      >
+                        {formData.receptionRsvp === "No" ? (
+                          <option value={0}>0 Guests</option>
+                        ) : (
+                          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                            <option key={num} value={num}>
+                              {num} {num === 1 ? "Guest" : "Guests"}
+                            </option>
+                          ))
+                        )}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-charcoal mb-1">
+                        RSVP
+                      </label>
+                      <select
+                        value={formData.receptionRsvp}
+                        onChange={(e) => handleReceptionRsvpChange(e.target.value as "Yes" | "Maybe" | "No")}
+                        className={`w-full px-3 py-2 rounded-xl border text-xs font-semibold transition-all focus:outline-none ${
+                          formData.receptionRsvp === "Yes"
+                            ? "bg-emerald-50/80 border-emerald-300 text-emerald-900"
+                            : formData.receptionRsvp === "Maybe"
+                            ? "bg-amber-50/80 border-amber-300 text-amber-900"
+                            : "bg-rose-50/80 border-rose-300 text-rose-900"
+                        }`}
+                      >
+                        <option value="Yes">Yes</option>
+                        <option value="Maybe">Maybe</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Open text comment box per user feedback underneath the table */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Additional Attendance Comments, Guest Names, or Notes
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Attending with parents, bringing infant stroller, etc."
+                  value={formData.eventComments}
+                  onChange={(e) => setFormData({ ...formData, eventComments: e.target.value })}
+                  className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-xs sm:text-sm text-charcoal focus:outline-none focus:border-navy transition-colors placeholder:text-mutedText/60"
+                />
               </div>
             </div>
 

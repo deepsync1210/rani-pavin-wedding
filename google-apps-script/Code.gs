@@ -60,8 +60,12 @@ function getOrCreateTargetSheet() {
       "Full Name",
       "Email Address",
       "Mobile Phone",
-      "Total Party Count",
-      "Events Attending (June 19, 2027)",
+      "Ceremony RSVP",
+      "Ceremony Guests",
+      "Reception RSVP",
+      "Reception Guests",
+      "Total Estimated Party",
+      "Attendance Comments / Notes",
       "Street Address",
       "Apt / Suite / Unit",
       "City",
@@ -70,7 +74,7 @@ function getOrCreateTargetSheet() {
       "Country",
       "Dietary Restrictions",
       "DJ Song Request",
-      "Notes & Blessings"
+      "Blessings / General Notes"
     ];
 
     sheet.appendRow(headers);
@@ -103,13 +107,23 @@ function doPost(e) {
       "yyyy-MM-dd HH:mm:ss"
     );
 
+    var ceremonyRsvp = data.ceremonyRsvp || "Yes";
+    var ceremonyGuests = ceremonyRsvp === "No" ? 0 : (data.ceremonyGuests != null ? data.ceremonyGuests : (data.guestCount || 1));
+    var receptionRsvp = data.receptionRsvp || "Yes";
+    var receptionGuests = receptionRsvp === "No" ? 0 : (data.receptionGuests != null ? data.receptionGuests : (data.guestCount || 1));
+    var totalParty = data.guestCount != null ? data.guestCount : Math.max(ceremonyGuests, receptionGuests);
+
     sheet.appendRow([
       timestamp,
       data.fullName || "",
       data.email || "",
       data.phone || "",
-      data.guestCount || 1,
-      data.eventsAttending || "",
+      ceremonyRsvp,
+      ceremonyGuests,
+      receptionRsvp,
+      receptionGuests,
+      totalParty,
+      data.eventComments || "",
       data.streetAddress || "",
       data.aptSuite || "",
       data.city || "",
@@ -123,7 +137,7 @@ function doPost(e) {
 
     // Format new row styling
     var lastRow = sheet.getLastRow();
-    var rowRange = sheet.getRange(lastRow, 1, 1, 15);
+    var rowRange = sheet.getRange(lastRow, 1, 1, 19);
     rowRange.setFontFamily("Arial");
     rowRange.setVerticalAlignment("middle");
 
