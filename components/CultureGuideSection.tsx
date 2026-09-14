@@ -105,8 +105,8 @@ export default function CultureGuideSection() {
               key={idx}
               className={`rounded-2xl border transition-all duration-300 ${
                 isOpen
-                  ? "bg-surface/90 border-champagne shadow-sm"
-                  : "bg-background border-borderLight hover:border-champagne/70 hover:bg-surface/40"
+                  ? "bg-white border-champagne shadow-md"
+                  : "bg-white border-borderLight hover:border-champagne/70 shadow-xs"
               }`}
             >
               <button
@@ -137,7 +137,7 @@ export default function CultureGuideSection() {
               {isOpen && (
                 <div className="px-5 sm:px-6 pb-6 pt-2 text-sm text-charcoal/85 border-t border-borderLight/60 animate-fade-in space-y-4">
                   <p className="leading-relaxed font-light">{item.details}</p>
-                  <div className="bg-background/80 rounded-xl p-4 border border-borderLight space-y-2">
+                  <div className="bg-[#FAF8F5] rounded-xl p-4 border border-borderLight space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-wider text-navy">
                       Helpful Tips for Guests:
                     </p>

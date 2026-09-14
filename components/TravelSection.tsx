@@ -64,7 +64,7 @@ export default function TravelSection() {
   ];
 
   return (
-    <section id="travel" className="py-24 bg-surface/50 border-t border-borderLight">
+    <section id="travel" className="py-24 bg-[#FAF8F5] border-t border-borderLight relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -97,8 +97,8 @@ export default function TravelSection() {
                 key={idx}
                 className={`rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between ${
                   airport.recommended
-                    ? "bg-background border-2 border-champagne shadow-md"
-                    : "bg-background/90 border border-borderLight shadow-2xs"
+                    ? "bg-white border-2 border-champagne shadow-md"
+                    : "bg-white border border-borderLight shadow-xs"
                 }`}
               >
                 <div>

@@ -128,6 +128,23 @@
 
 ---
 
+## Work Log: Revision 1.5 (Solid Text Box Contrast, Photo Recentering & Gate Polish)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Solid Theme Color Fills for Contrast & Readability**:
+   - Enclosed the Hero titles, Gurmukhi blessing, and countdown timer in an opaque, frosted luxury alabaster plaque (`bg-white/95`) with corner filigrees, eliminating pattern interference.
+   - Added solid white fills (`bg-white`) to the Story narrative card, all 3 photo cards, Schedule sections, Culture guide drawers, Travel airport & hotel cards, Shagun payment cards, and RSVP form container.
+   - Refined input backgrounds to solid `#FAF8F5` for crisp readability.
+2. **Centered Rani & Pavin in "Early Days" Card (Img 1)**:
+   - Adjusted object position from `object-top` to `object-[center_62%]`, centering Rani and Pavin squarely in the frame.
+3. **Password Gate Polish**:
+   - Cleaned passcode input placeholder strictly to `"Enter passcode"`, removing any explicit password hints.
+   - Tuned global jaali tapestry watermark opacity to `18%` for subtle luxury.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 

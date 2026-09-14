@@ -168,7 +168,7 @@ export default function RsvpForm() {
       </div>
 
       {/* Main Card Container */}
-      <div className="bg-surface/90 rounded-3xl p-6 sm:p-10 border border-borderLight shadow-md">
+      <div className="bg-white rounded-3xl p-6 sm:p-10 border border-borderLight shadow-xl">
         {status === "success" ? (
           <div className="text-center py-12 px-4 animate-fade-in">
             <div className="w-16 h-16 rounded-full bg-navy/10 border-2 border-navy flex items-center justify-center mx-auto mb-6 text-navy">

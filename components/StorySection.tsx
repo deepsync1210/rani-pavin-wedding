@@ -22,7 +22,7 @@ export default function StorySection() {
       {/* Narrative & Editorial Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
         {/* Real Story from WithJoy */}
-        <div className="lg:col-span-6 space-y-6 text-charcoal/85 leading-relaxed font-light text-base sm:text-lg">
+        <div className="lg:col-span-6 space-y-6 text-charcoal/85 leading-relaxed font-light text-base sm:text-lg bg-white rounded-3xl p-6 sm:p-8 border border-borderLight shadow-xs">
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:text-navy first-letter:font-semibold">
             Long before officially crossing paths, Pavin had actually spotted Rani in 2019 on LinkedIn interning at the same company as his cousin. He sent a quiet connection request, but life moved on until late 2022, when Pavin, temporarily in the Bay Area from Chicago for a wedding, officially met Rani. They matched instantly, and two dates quickly turned into four. Right before catching his flight back to Chicago after the holidays, Pavin asked Rani to make things official.
           </p>
@@ -38,7 +38,7 @@ export default function StorySection() {
 
         {/* Featured Portrait with Santorini, Greece Label */}
         <div className="lg:col-span-6">
-          <div className="relative p-3 sm:p-4 rounded-3xl bg-surface border border-borderLight shadow-lg">
+          <div className="relative p-3 sm:p-4 rounded-3xl bg-white border border-borderLight shadow-lg">
             <div className="relative h-[440px] sm:h-[520px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/portrait.jpg"
@@ -63,18 +63,18 @@ export default function StorySection() {
 
       {/* 3-Photo Editorial Grid — Vertically Aligned */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-        {/* Photo 1: Early Days */}
-        <div className="relative group overflow-hidden rounded-2xl bg-surface border border-borderLight shadow-sm flex flex-col justify-between">
+        {/* Photo 1: Early Days — Centered on Rani & Pavin */}
+        <div className="relative group overflow-hidden rounded-2xl bg-white border border-borderLight shadow-sm flex flex-col justify-between">
           <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-mutedText/10">
             <Image
               src="/images/early_days.png"
               alt="Early Days"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              className="object-cover object-[center_62%] group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-5 bg-surface">
+          <div className="p-5 bg-white">
             <p className="text-[11px] uppercase tracking-widest text-champagne-dark font-semibold">
               Early Days
             </p>
@@ -84,8 +84,8 @@ export default function StorySection() {
           </div>
         </div>
 
-        {/* Photo 2: Midwest to West Coast (Vertically Aligned) */}
-        <div className="relative group overflow-hidden rounded-2xl bg-surface border border-borderLight shadow-sm flex flex-col justify-between">
+        {/* Photo 2: Midwest to West Coast */}
+        <div className="relative group overflow-hidden rounded-2xl bg-white border border-borderLight shadow-sm flex flex-col justify-between">
           <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-mutedText/10">
             <Image
               src="/images/night_city.jpg"
@@ -95,7 +95,7 @@ export default function StorySection() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-5 bg-surface">
+          <div className="p-5 bg-white">
             <p className="text-[11px] uppercase tracking-widest text-champagne-dark font-semibold">
               The Journey
             </p>
@@ -106,7 +106,7 @@ export default function StorySection() {
         </div>
 
         {/* Photo 3: The Proposal */}
-        <div className="relative group overflow-hidden rounded-2xl bg-surface border border-borderLight shadow-sm flex flex-col justify-between">
+        <div className="relative group overflow-hidden rounded-2xl bg-white border border-borderLight shadow-sm flex flex-col justify-between">
           <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-mutedText/10">
             <Image
               src="/images/real_proposal.jpg"
@@ -116,7 +116,7 @@ export default function StorySection() {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div className="p-5 bg-surface">
+          <div className="p-5 bg-white">
             <p className="text-[11px] uppercase tracking-widest text-champagne-dark font-semibold">
               The Proposal
             </p>

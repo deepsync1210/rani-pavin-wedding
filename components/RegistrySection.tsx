@@ -109,17 +109,17 @@ export default function RegistrySection() {
       {/* Direct Payment Channels (Venmo & Zelle Cards) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-center">
         {/* Venmo Card */}
-        <div className="bg-surface rounded-2xl p-6 border border-borderLight shadow-xs flex flex-col justify-between">
+        <div className="bg-white rounded-2xl p-6 sm:p-7 border border-borderLight shadow-sm flex flex-col justify-between">
           {/* Pavin's Venmo */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#008CFF] tracking-tight">Venmo</span>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-white px-2.5 py-1 rounded-full border border-borderLight">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-surface px-2.5 py-1 rounded-full border border-borderLight">
                 Zero Fees
               </span>
             </div>
             <p className="text-xs text-charcoal/80 mb-2">Send directly to Pavin&apos;s Venmo account:</p>
-            <p className="font-mono text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all">
+            <p className="font-mono text-sm font-semibold text-charcoal bg-[#FAF8F5] px-3 py-2 rounded-lg border border-borderLight select-all">
               @pavin_virdee
             </p>
             <div className="flex items-center space-x-3 pt-2">
@@ -135,7 +135,7 @@ export default function RegistrySection() {
               <button
                 type="button"
                 onClick={() => handleCopy("pavin_virdee", "Pavin's Venmo")}
-                className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
+                className="py-2.5 px-3 rounded-xl bg-surface border border-borderLight text-xs text-charcoal font-medium hover:bg-surface/80 transition-colors flex items-center space-x-1"
                 title="Copy Pavin's Venmo Handle"
               >
                 {copiedItem === "Pavin's Venmo" ? (
@@ -158,7 +158,7 @@ export default function RegistrySection() {
           {/* Rani's Venmo */}
           <div>
             <p className="text-xs text-charcoal/80 mb-2">Send directly to Rani&apos;s Venmo account:</p>
-            <p className="font-mono text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all">
+            <p className="font-mono text-sm font-semibold text-charcoal bg-[#FAF8F5] px-3 py-2 rounded-lg border border-borderLight select-all">
               @ranisidhu
             </p>
             <div className="flex items-center space-x-3 pt-2">
@@ -174,7 +174,7 @@ export default function RegistrySection() {
               <button
                 type="button"
                 onClick={() => handleCopy("ranisidhu", "Rani's Venmo")}
-                className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
+                className="py-2.5 px-3 rounded-xl bg-surface border border-borderLight text-xs text-charcoal font-medium hover:bg-surface/80 transition-colors flex items-center space-x-1"
                 title="Copy Rani's Venmo Handle"
               >
                 {copiedItem === "Rani's Venmo" ? (
@@ -194,7 +194,7 @@ export default function RegistrySection() {
         </div>
 
         {/* Zelle Card — Vertically Centered alongside Venmo */}
-        <div className="bg-surface rounded-2xl p-6 sm:p-7 border border-borderLight shadow-xs md:self-center flex flex-col justify-center">
+        <div className="bg-white rounded-2xl p-6 sm:p-7 border border-borderLight shadow-sm md:self-center flex flex-col justify-center">
           <div className="mb-5">
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#7414CA] tracking-tight">Zelle</span>

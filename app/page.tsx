@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background relative selection:bg-navy selection:text-background overflow-x-hidden">
       {/* Subtle luxury tapestry watermark throughout the entire portal */}
-      <TapestryWatermark />
+      <TapestryWatermark className="opacity-18" />
 
       {/* Sticky Top Navigation */}
       <Navbar isPlaying={isPlaying} toggleAudio={toggleAudio} />

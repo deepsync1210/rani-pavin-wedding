@@ -107,7 +107,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
           </span>
         </div>
 
-        {/* Sacred Gurmukhi Inscription */}
+        {/* Sacred Gurmukhi Inscription
         <div className="mb-3">
           <p className="text-xs font-serif tracking-[0.2em] text-champagne-dark font-semibold">
             ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
@@ -115,7 +115,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
           <p className="text-[11px] font-serif italic text-navy/80">
             ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ &bull; One Light in Two Bodies
           </p>
-        </div>
+        </div> */}
 
         <GarlandFlourish className="w-36 h-5 mx-auto text-champagne/80 mb-4" />
 
@@ -142,13 +142,13 @@ export default function PasswordGate({ children }: PasswordGateProps) {
             <input
               type="password"
               autoFocus
-              placeholder="Enter passcode (e.g. matcha)"
+              placeholder="Enter passcode"
               value={inputPass}
               onChange={(e) => {
                 setInputPass(e.target.value);
                 setErrorMsg("");
               }}
-              className="w-full pl-10 pr-4 py-3 rounded-2xl bg-surface/60 border border-borderLight text-sm text-charcoal placeholder:text-mutedText/60 focus:outline-none focus:border-navy focus:bg-white transition-all text-center tracking-widest font-mono"
+              className="w-full pl-10 pr-4 py-3 rounded-2xl bg-[#FAF8F5] border border-borderLight text-sm text-charcoal placeholder:text-mutedText/60 focus:outline-none focus:border-navy focus:bg-white transition-all text-center tracking-widest font-mono"
             />
           </div>
 
@@ -171,7 +171,7 @@ export default function PasswordGate({ children }: PasswordGateProps) {
         {/* Discreet Help Note */}
         <div className="mt-8 pt-5 border-t border-borderLight/60 flex items-center justify-center space-x-1.5 text-[11px] text-mutedText font-light">
           <ShieldCheck className="w-3.5 h-3.5 text-champagne-dark" />
-          <span>Private guest portal &bull; RSVP &amp; Shagun Registry</span>
+          <span>Private Wedding Hub</span>
         </div>
       </div>
     </div>

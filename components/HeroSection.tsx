@@ -79,57 +79,65 @@ export default function HeroSection() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative max-w-4xl mx-auto text-center z-10 flex flex-col items-center">
-        {/* Save The Date Pill */}
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-champagne/80 bg-white/90 backdrop-blur-md mb-6 animate-fade-in shadow-xs">
-          <Heart className="w-3.5 h-3.5 text-champagne fill-champagne/30" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-medium text-navy">
-            Save The Date • Anand Karaj &amp; Reception
-          </span>
-        </div>
+      <div className="relative max-w-3xl mx-auto text-center z-10 flex flex-col items-center w-full">
+        {/* Luxury Framed Hero Plaque with Solid Color Fill */}
+        <div className="relative w-full bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-champagne/60 shadow-xl mb-8 flex flex-col items-center overflow-hidden">
+          <CornerFiligree className="absolute top-3 left-3 w-8 h-8 text-champagne/50 pointer-events-none" />
+          <CornerFiligree className="absolute top-3 right-3 w-8 h-8 text-champagne/50 pointer-events-none rotate-90" />
+          <CornerFiligree className="absolute bottom-3 left-3 w-8 h-8 text-champagne/50 pointer-events-none -rotate-90" />
+          <CornerFiligree className="absolute bottom-3 right-3 w-8 h-8 text-champagne/50 pointer-events-none rotate-180" />
 
-        {/* Primary Couple Names */}
-        <h1 className="heading-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-charcoal font-light tracking-tight mb-3">
-          Rani Sidhu <br className="hidden sm:inline" />
-          <span className="font-serif italic font-normal text-champagne-dark px-2 sm:px-3 text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            &amp;
-          </span>
-          Pavin Virdee
-        </h1>
-
-        {/* Sacred Gurmukhi Inscription & Floral Flourish */}
-        <div className="max-w-2xl mx-auto mb-8 flex flex-col items-center animate-fade-in">
-          <div className="flex items-center space-x-3 mb-2">
-            <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
-            <span className="text-base sm:text-lg font-serif tracking-[0.25em] text-champagne-dark font-medium">
-              ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
+          {/* Save The Date Pill */}
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-champagne/80 bg-surface mb-5 animate-fade-in shadow-xs">
+            <Heart className="w-3.5 h-3.5 text-champagne fill-champagne/30" />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-medium text-navy">
+              Save The Date • Anand Karaj &amp; Reception
             </span>
-            <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
           </div>
-          <p className="text-xs sm:text-sm font-serif italic text-navy/90 tracking-wider">
-            ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ &bull; One Light in Two Bodies
-          </p>
-          <GarlandFlourish className="w-48 sm:w-64 h-6 text-champagne/85 mt-2.5" />
-        </div>
 
-        {/* Date & Exact Location Pill */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-charcoal/85 font-medium mb-10">
-          <div className="flex items-center space-x-2 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-borderLight shadow-2xs">
-            <Calendar className="w-4 h-4 text-navy" />
-            <span className="tracking-wide">Saturday, June 19, 2027</span>
+          {/* Primary Couple Names */}
+          <h1 className="heading-display text-4xl sm:text-6xl md:text-7xl text-charcoal font-light tracking-tight mb-3">
+            Rani Sidhu <br className="hidden sm:inline" />
+            <span className="font-serif italic font-normal text-champagne-dark px-2 sm:px-3 text-3xl sm:text-5xl md:text-6xl">
+              &amp;
+            </span>
+            Pavin Virdee
+          </h1>
+
+          {/* Sacred Gurmukhi Inscription & Floral Flourish */}
+          <div className="max-w-2xl mx-auto mb-6 flex flex-col items-center animate-fade-in">
+            <div className="flex items-center space-x-3 mb-2">
+              <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
+              <span className="text-base sm:text-lg font-serif tracking-[0.25em] text-champagne-dark font-medium">
+                ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
+              </span>
+              <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
+            </div>
+            <p className="text-xs sm:text-sm font-serif italic text-navy/90 tracking-wider">
+              ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ &bull; One Light in Two Bodies
+            </p>
+            <GarlandFlourish className="w-48 sm:w-64 h-6 text-champagne/85 mt-2.5" />
           </div>
-          <div className="flex items-center space-x-2 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-borderLight shadow-2xs">
-            <MapPin className="w-4 h-4 text-navy" />
-            <span className="tracking-wide">San Jose, California</span>
+
+          {/* Date & Exact Location Pill */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-sm text-charcoal font-medium">
+            <div className="flex items-center space-x-2 bg-surface px-4 py-2 rounded-full border border-borderLight shadow-2xs">
+              <Calendar className="w-4 h-4 text-navy" />
+              <span className="tracking-wide">Saturday, June 19, 2027</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-surface px-4 py-2 rounded-full border border-borderLight shadow-2xs">
+              <MapPin className="w-4 h-4 text-navy" />
+              <span className="tracking-wide">San Jose, California</span>
+            </div>
           </div>
         </div>
 
         {/* Live Countdown Timer */}
-        <div className="relative w-full max-w-xl bg-surface/90 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-champagne/70 shadow-sm mb-10 overflow-hidden">
-          <CornerFiligree className="absolute top-2.5 left-2.5 w-8 h-8 text-champagne/60 pointer-events-none" />
-          <CornerFiligree className="absolute top-2.5 right-2.5 w-8 h-8 text-champagne/60 pointer-events-none rotate-90" />
-          <CornerFiligree className="absolute bottom-2.5 left-2.5 w-8 h-8 text-champagne/60 pointer-events-none -rotate-90" />
-          <CornerFiligree className="absolute bottom-2.5 right-2.5 w-8 h-8 text-champagne/60 pointer-events-none rotate-180" />
+        <div className="relative w-full max-w-xl bg-white rounded-3xl p-6 sm:p-7 border border-champagne/70 shadow-md mb-10 overflow-hidden">
+          <CornerFiligree className="absolute top-2.5 left-2.5 w-8 h-8 text-champagne/50 pointer-events-none" />
+          <CornerFiligree className="absolute top-2.5 right-2.5 w-8 h-8 text-champagne/50 pointer-events-none rotate-90" />
+          <CornerFiligree className="absolute bottom-2.5 left-2.5 w-8 h-8 text-champagne/50 pointer-events-none -rotate-90" />
+          <CornerFiligree className="absolute bottom-2.5 right-2.5 w-8 h-8 text-champagne/50 pointer-events-none rotate-180" />
           <p className="text-[11px] uppercase tracking-[0.2em] text-mutedText font-semibold mb-4 text-center">
             Countdown to the Big Day
           </p>
@@ -142,7 +150,7 @@ export default function HeroSection() {
             ].map((unit, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-white/95 rounded-2xl p-3 sm:p-4 border border-borderLight/80 shadow-2xs"
+                className="flex flex-col items-center justify-center bg-[#FAF8F5] rounded-2xl p-3 sm:p-4 border border-borderLight shadow-2xs"
               >
                 <span className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold text-navy tracking-tight">
                   {typeof unit.value === "number"
