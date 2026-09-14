@@ -109,6 +109,25 @@
 
 ---
 
+## Work Log: Revision 1.4 (Hero Photo Stacking Fix & Authentic Mughal Jaali Tapestry)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Hero Proposal Photo Stacking Fix**:
+   - Resolved CSS stacking context where `-z-10` rendered the engagement photo behind `<main>`'s background fill.
+   - Set `<section>` to `isolate` and photo container to `z-0`, ensuring `/images/hero_proposal.jpg` is vividly visible across the entire hero screen.
+   - Refined luminous editorial veil so the couple shines through warmly while keeping text 100% legible.
+2. **Authentic Mughal Jaali Tapestry Lattice**:
+   - Replaced basic CSS radial dot grid with an authentic 60x60 repeating SVG Mughal Jaali (trellis lattice) pattern with interlocking arches and star geometry.
+   - Applied seamlessly across the global portal background and passcode gate.
+3. **High-Detail Lotus & Garland Flourishes**:
+   - Upgraded lotus motif from a basic polygon to an authentic multi-petaled royal Indian wedding lotus flower in warm champagne gold.
+   - Enabled lotus visibility across both mobile and desktop screens.
+   - Framed all 4 corners of the countdown timer card with architectural jali corner filigrees.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 

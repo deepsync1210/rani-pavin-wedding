@@ -13,7 +13,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Lock, Heart, ArrowRight, Sparkles, CheckCircle2, ShieldCheck } from "lucide-react";
-import { LotusMotif, GarlandFlourish } from "./FloralMotifs";
+import { LotusMotif, GarlandFlourish, TapestryWatermark } from "./FloralMotifs";
 
 interface PasswordGateProps {
   children: React.ReactNode;
@@ -94,14 +94,8 @@ export default function PasswordGate({ children }: PasswordGateProps) {
 
   return (
     <div className="min-h-screen bg-background relative flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-      {/* Luxury Background Wallpaper / Vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04] select-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 12px 12px, #162846 1.5px, transparent 0), radial-gradient(circle at 36px 36px, #C5A880 1.5px, transparent 0)`,
-          backgroundSize: "48px 48px",
-        }}
-      />
+      {/* Luxury Mughal Jaali Tapestry Background */}
+      <TapestryWatermark className="opacity-45" />
       <div className="absolute inset-0 bg-gradient-to-t from-blush/25 via-transparent to-surface/40 pointer-events-none" />
 
       {/* Main Gate Card */}

@@ -58,24 +58,24 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 px-4 sm:px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 px-4 sm:px-6 isolate">
       {/* Editorial Background Photography with Warm Luxury Rose-Blush & Alabaster Gradient */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/hero_proposal.jpg"
           alt="Rani Sidhu & Pavin Virdee"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-105 filter brightness-[0.93] contrast-[1.02]"
+          className="object-cover object-center scale-105 filter brightness-[0.96] contrast-[1.04]"
         />
-        {/* Editorial Gradients: Alabaster, Soft Blush, and Royal Navy vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/65 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-transparent to-background" />
-        <div className="absolute inset-0 bg-navy/15 mix-blend-multiply" />
+        {/* Soft, luminous editorial overlays that keep the couple vividly visible */}
+        <div className="absolute inset-0 bg-background/55 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
         {/* Subtle romantic blush warmth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blush/20 via-transparent to-blush/20 pointer-events-none" />
-        <TapestryWatermark />
+        <div className="absolute inset-0 bg-gradient-to-r from-blush/15 via-transparent to-blush/15 pointer-events-none" />
+        <TapestryWatermark className="opacity-30" />
       </div>
 
       {/* Main Content Container */}
@@ -99,17 +99,17 @@ export default function HeroSection() {
 
         {/* Sacred Gurmukhi Inscription & Floral Flourish */}
         <div className="max-w-2xl mx-auto mb-8 flex flex-col items-center animate-fade-in">
-          <div className="flex items-center space-x-3 mb-1.5">
-            <LotusMotif className="w-5 h-5 text-champagne hidden sm:block" />
+          <div className="flex items-center space-x-3 mb-2">
+            <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
             <span className="text-base sm:text-lg font-serif tracking-[0.25em] text-champagne-dark font-medium">
               ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
             </span>
-            <LotusMotif className="w-5 h-5 text-champagne hidden sm:block" />
+            <LotusMotif className="w-7 h-7 sm:w-8 sm:h-8 text-champagne" />
           </div>
           <p className="text-xs sm:text-sm font-serif italic text-navy/90 tracking-wider">
             ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ &bull; One Light in Two Bodies
           </p>
-          <GarlandFlourish className="w-40 sm:w-52 h-5 text-champagne/75 mt-2" />
+          <GarlandFlourish className="w-48 sm:w-64 h-6 text-champagne/85 mt-2.5" />
         </div>
 
         {/* Date & Exact Location Pill */}
@@ -125,9 +125,11 @@ export default function HeroSection() {
         </div>
 
         {/* Live Countdown Timer */}
-        <div className="relative w-full max-w-xl bg-surface/85 backdrop-blur-md rounded-3xl p-6 border border-champagne/60 shadow-sm mb-10 overflow-hidden">
-          <CornerFiligree className="absolute top-2 left-2 w-6 h-6 text-champagne/40 pointer-events-none" />
-          <CornerFiligree className="absolute top-2 right-2 w-6 h-6 text-champagne/40 pointer-events-none rotate-90" />
+        <div className="relative w-full max-w-xl bg-surface/90 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-champagne/70 shadow-sm mb-10 overflow-hidden">
+          <CornerFiligree className="absolute top-2.5 left-2.5 w-8 h-8 text-champagne/60 pointer-events-none" />
+          <CornerFiligree className="absolute top-2.5 right-2.5 w-8 h-8 text-champagne/60 pointer-events-none rotate-90" />
+          <CornerFiligree className="absolute bottom-2.5 left-2.5 w-8 h-8 text-champagne/60 pointer-events-none -rotate-90" />
+          <CornerFiligree className="absolute bottom-2.5 right-2.5 w-8 h-8 text-champagne/60 pointer-events-none rotate-180" />
           <p className="text-[11px] uppercase tracking-[0.2em] text-mutedText font-semibold mb-4 text-center">
             Countdown to the Big Day
           </p>
