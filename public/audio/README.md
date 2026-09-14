@@ -1,8 +1,9 @@
 # Wedding Background Audio
 
-Track: Kangna (Acoustic Mix) - Dr Zeus
-Spotify: https://open.spotify.com/track/6JA6NDkQnD3DC6d5IMrNT7
+Track: Ishq Hua - Ikky
+File: `public/audio/ishq_hua_ikky.mp3`
 
 To replace the background audio:
-Place your MP3 file as `kangna-acoustic.mp3` directly in this directory (`public/audio/kangna-acoustic.mp3`).
+Place your MP3 file directly in this directory (`public/audio/`) and update `src` in `components/MusicPlayer.tsx`.
 The web player will automatically load and stream it in the background!
+

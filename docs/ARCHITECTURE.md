@@ -78,6 +78,6 @@ Google Apps Script webhooks execute a `302 Found` HTTP redirect when handling PO
 
 ## 5. Audio Playback Strategy
 Browsers enforce strict autoplay prevention policies that block unmuted audio without a prior user gesture.
-- The `MusicPlayer` component attempts initial playback upon mount.
-- If blocked, it attaches a one-time global interaction listener (`click`, `touchstart`) that activates playback on the user's first tap anywhere on the page.
-- A persistent floating pill in the bottom right allows manual play/pause, displays an animated equalizer bar, and provides a direct link to the track on Spotify.
+- The `MusicPlayer` component embeds *Ishq Hua - Ikky* (`/audio/ishq_hua_ikky.mp3`) headlessly.
+- It attempts initial playback upon mount. If blocked, it attaches a one-time global interaction listener (`click`, `touchstart`, `scroll`) that activates playback on the user's first gesture anywhere on the page.
+- Playback state is synced directly to the sound wave controller in the top `Navbar` with live animated equalizer bars.

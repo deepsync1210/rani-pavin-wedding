@@ -88,7 +88,7 @@ export default function Navbar({ isPlaying = false, toggleAudio }: NavbarProps) 
             <button
               onClick={toggleAudio}
               className="flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-champagne/70 bg-white/80 hover:bg-white text-xs text-charcoal transition-all shadow-xs"
-              title={isPlaying ? "Mute Background Music" : "Play Babe Bhangra Paunde Ne (Gurdas Maan)"}
+              title={isPlaying ? "Mute Background Music" : "Play Ishq Hua (Ikky)"}
             >
               {isPlaying ? (
                 <>

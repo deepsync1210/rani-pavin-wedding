@@ -38,8 +38,8 @@ An editorial modern Sikh luxury wedding website built with **Next.js 14 (App Rou
    - Confetti celebration upon submission (`canvas-confetti`).
    - Routed through Next.js server route `/api/rsvp` to Google Apps Script.
 9. **Background Audio Player**:
-   - Track: *Kangna (Acoustic Mix) - Dr Zeus*.
-   - Auto-play on first visitor gesture, floating audio controller with equalizer animation, and direct Spotify link.
+   - Track: *Ishq Hua - Ikky* (`/audio/ishq_hua_ikky.mp3`).
+   - Auto-play on first visitor gesture, with sound wave equalizer toggle in the top navigation bar.
 
 ---
 

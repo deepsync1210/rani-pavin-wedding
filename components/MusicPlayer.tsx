@@ -3,8 +3,8 @@
 /**
  * MusicPlayer Component — Ambient Background Audio Controller (Headless)
  * 
- * Track: Babe Bhangra Paunde Ne - Gurdas Maan
- * Embedded Audio: /audio/babe_bhangra_pounde_ne.mp3
+ * Track: Ishq Hua - Ikky
+ * Embedded Audio: /audio/ishq_hua_ikky.mp3
  * 
  * Behavior:
  * - Automatically attempts audio playback on page load.
@@ -89,7 +89,7 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
   return (
     <audio
       ref={audioRef}
-      src="/audio/babe_bhangra_pounde_ne.mp3"
+      src="/audio/ishq_hua_ikky.mp3"
       loop
       preload="auto"
       className="hidden"

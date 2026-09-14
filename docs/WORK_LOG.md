@@ -178,6 +178,20 @@
 
 ---
 
+## Work Log: Revision 1.8 (Audio Track Update to Ishq Hua - Ikky)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Updated Ambient Background Track**:
+   - Swapped background audio to *Ishq Hua* by Ikky (`public/audio/ishq_hua_ikky.mp3`).
+   - Updated audio source in `components/MusicPlayer.tsx` to `/audio/ishq_hua_ikky.mp3`.
+   - Updated sound controller tooltip and accessibility title in `components/Navbar.tsx` to `Play Ishq Hua (Ikky)`.
+2. **Updated Documentation**:
+   - Updated `README.md`, `docs/ARCHITECTURE.md`, and `public/audio/README.md` to reference *Ishq Hua - Ikky*.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 
