@@ -22,10 +22,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background relative selection:bg-navy selection:text-background overflow-x-hidden">
-      {/* Background Jaali Tapestry Pattern Layer (strictly behind all content across entire site) */}
-      <div className="fixed inset-0 pointer-events-none -z-10 select-none">
-        <TapestryWatermark className="opacity-22" />
-      </div>
+      {/* Subtle luxury Mughal jaali tapestry watermark throughout the entire portal */}
+      <TapestryWatermark className="z-0 pointer-events-none" />
 
       {/* Sticky Top Navigation */}
       <Navbar isPlaying={isPlaying} toggleAudio={toggleAudio} />

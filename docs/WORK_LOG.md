@@ -163,6 +163,21 @@
 
 ---
 
+## Work Log: Revision 1.7 (Restored Mughal Jaali Lattice Background & Section Stacking)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Restored Global Mughal Jaali Trellis Pattern**:
+   - Fixed the issue where wrapping `TapestryWatermark` in `-z-10` caused `<main>`'s solid background color (`bg-background`) to hide the pattern.
+   - Positioned `TapestryWatermark` directly on `<main>` at `z-0 pointer-events-none` with its original calibrated champagne gold SVG opacity.
+2. **Elevated All Content Sections to `relative z-10`**:
+   - Added `relative z-10` to `StorySection`, `ScheduleSection`, `CultureGuideSection`, `TravelSection`, `RegistrySection`, and `RsvpForm`.
+   - Content cards retain 100% solid opaque white fills (`bg-white`), perfectly covering the background pattern underneath them so text readability is pristine.
+   - All gutters and whitespace across the entire site now vividly display the warm, regal Mughal jaali tapestry pattern.
+
+---
+
 ## AI Automations Roadmap (~500 Guests)
 As the wedding approaches, the following automated workflows can be layered on top of this MVP:
 
