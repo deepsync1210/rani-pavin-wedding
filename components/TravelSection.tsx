@@ -31,28 +31,36 @@ export default function TravelSection() {
     },
   ];
 
-  const hotels = [
+  interface Hotel {
+    name: string;
+    area: string;
+    description?: string;
+    status: string;
+    linkText?: string;
+  }
+
+  const hotels: Hotel[] = [
     {
-      name: "Signia by Hilton San Jose / Downtown",
-      area: "Downtown San Jose",
-      description: "Upscale luxury hotel situated in the vibrant heart of downtown San Jose, near dining and Plaza de César Chávez.",
-      status: "Official Room Block In Progress",
-      linkText: "Room Block Link Coming Soon",
+      name: "Hayes Mansion San Jose, Curio Collection by Hilton",
+      area: "San Jose ~ 11min drive to Reception Venue",
+      // description: "Once a private home and social hub, the mansion today serves as Silicon Valley’s ultimate setting for unique escapes and unforgettable celebrations. Timeless architecture, modern comfort, and thoughtful dining come together in a setting that feels both composed and welcoming.",
+      status: "$$$",
+      linkText: "Room Block In Progress",
     },
     {
-      name: "Hotel Valencia Santana Row",
-      area: "Santana Row, San Jose",
-      description: "Boutique European-inspired hotel steps away from world-class dining, pedestrian shopping plazas, and lively cafes.",
-      status: "Recommended Boutique Stay",
-      linkText: "Explore Santana Row",
+      name: "Home2 Suites, Hilton San Jose South",
+      area: "San Jose ~ 6min drive to Reception Venue",
+      // description: "Boutique European-inspired hotel steps away from world-class dining, pedestrian shopping plazas, and lively cafes.",
+      status: "$$",
+      linkText: " ",
     },
-    {
-      name: "Courtyard by Marriott San Jose South",
-      area: "South San Jose / Blossom Hill",
-      description: "Comfortable and convenient hotel located just a short 10-minute drive from the San Jose Gurdwara.",
-      status: "Family-Friendly Option",
-      linkText: "Room Block Details Coming Soon",
-    },
+    // {
+    //   name: "Extended Stay America Suites",
+    //   area: "South San Jose / Blossom Hill",
+    //   // description: "Comfortable and convenient hotel located just a short 10-minute drive from the San Jose Gurdwara.",
+    //   status: "$",
+    //   linkText: "Room Block In Progress",
+    // },
   ];
 
   return (
@@ -129,7 +137,7 @@ export default function TravelSection() {
             <h3 className="font-serif text-2xl font-medium text-charcoal">Accommodations &amp; Room Blocks</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {hotels.map((hotel, idx) => (
               <div
                 key={idx}
@@ -143,21 +151,25 @@ export default function TravelSection() {
                     {hotel.name}
                   </h4>
                   <p className="text-xs text-mutedText mb-3">{hotel.area}</p>
-                  <p className="text-xs text-charcoal/75 leading-relaxed font-light mb-4">
-                    {hotel.description}
-                  </p>
+                  {hotel.description && (
+                    <p className="text-xs text-charcoal/75 leading-relaxed font-light mb-4">
+                      {hotel.description}
+                    </p>
+                  )}
                 </div>
-                <div className="pt-4 border-t border-borderLight/60">
-                  <span className="text-xs text-champagne-dark italic font-serif">
-                    {hotel.linkText}
-                  </span>
-                </div>
+                {hotel.linkText?.trim() && (
+                  <div className="pt-4 border-t border-borderLight/60">
+                    <span className="text-xs text-champagne-dark italic font-serif">
+                      {hotel.linkText}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Local Exploration Tip */}
+        {/* Local Exploration Tip
         <div className="bg-background rounded-3xl p-6 sm:p-8 border border-champagne/50 shadow-xs max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6">
           <div className="w-14 h-14 rounded-full bg-surface border border-champagne flex items-center justify-center shrink-0">
             <Compass className="w-7 h-7 text-navy" />
@@ -173,7 +185,7 @@ export default function TravelSection() {
               and scenic drives!
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

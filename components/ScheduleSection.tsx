@@ -5,7 +5,7 @@
  * 
  * Updates based on user feedback:
  * - Removed pre-wedding private ceremonies banner.
- * - Event 1: "Morning Wedding Ceremony", 9:30 AM – 1:30 PM, Sikh Gurdwara San Jose (3636 Murillo Ave, San Jose, CA 95148).
+ * - Event 1: "Morning Wedding Ceremony", 9:30 AM – 1:30 PM, Sikh Gurdwara San Jose (3636 Gurdwara Ave, San Jose, CA 95148).
  * - Event 2: "Wedding Reception", 6:00 PM, Atria Banquet Hall & Event Center (113 Bernal Rd, San Jose, CA 95119).
  * - Removed timeline "Program Flow" from both cards.
  * - Updated Google Maps links to official shortlinks provided by user.
@@ -19,15 +19,15 @@ export default function ScheduleSection() {
     {
       badge: "Morning Wedding Ceremony",
       title: "Anand Karaj & Langar",
-      subtitle: "The Sacred Sikh Marriage Ceremony & Community Meal",
+      subtitle: "Breakfast, The Sikh Marriage Wedding Ceremony & Lunch",
       date: "Saturday, June 19, 2027",
       time: "9:30 AM – 1:30 PM",
       location: "Sikh Gurdwara San Jose",
-      address: "3636 Murillo Ave, San Jose, CA 95148",
+      address: "3636 Gurdwara Ave, San Jose, CA 95148",
       mapUrl: "https://maps.app.goo.gl/ipyjwzuP9xgx9JDq8",
       attire: "Traditional Indian Formal or Modest Western Formal (Comfortable for seated floor carpet; heads must be covered inside Darbar Sahib)",
       calendarTitle: "Rani & Pavin's Anand Karaj Ceremony",
-      calendarDetails: "Anand Karaj and Langar at Sikh Gurdwara San Jose (3636 Murillo Ave, San Jose, CA 95148).",
+      calendarDetails: "Anand Karaj and Langar at Sikh Gurdwara San Jose (3636 Gurdwara Ave, San Jose, CA 95148).",
       startTime: "20270619T163000Z", // 9:30 AM PDT is 16:30 UTC
       endTime: "20270619T203000Z",   // 1:30 PM PDT is 20:30 UTC
     },
@@ -40,7 +40,7 @@ export default function ScheduleSection() {
       location: "Atria Banquet Hall & Event Center",
       address: "113 Bernal Rd, San Jose, CA 95119",
       mapUrl: "https://maps.app.goo.gl/5QNZdG3qEuojFZGV9",
-      attire: "Black-Tie Optional / Glamorous Indian Formal (Lehengas, Sherwanis, Suits, Evening Gowns)",
+      attire: "Black-Tie Optional / Glamorous Indian Formal (Lehengas / Evening Gowns, Suits)",
       calendarTitle: "Rani & Pavin's Wedding Reception",
       calendarDetails: "Evening wedding reception at Atria Banquet Hall & Event Center (113 Bernal Rd, San Jose, CA 95119).",
       startTime: "20270620T010000Z", // 6:00 PM PDT is 01:00 UTC (June 20 UTC)

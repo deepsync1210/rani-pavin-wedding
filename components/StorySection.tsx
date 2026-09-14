@@ -24,20 +24,15 @@ export default function StorySection() {
         {/* Real Story from WithJoy */}
         <div className="lg:col-span-6 space-y-6 text-charcoal/85 leading-relaxed font-light text-base sm:text-lg">
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:text-navy first-letter:font-semibold">
-            The first time I saw him, we were both waiting at the same gate for a flight to San Diego.
-            I remember glancing over and thinking, <em>Wow, he&apos;s cute</em>. When I got to my seat,
-            I noticed the seat next to me was empty and thought, <em>how amazing would it be if he sat there?</em>
+            Long before officially crossing paths, Pavin had actually spotted Rani in 2019 on LinkedIn interning at the same company as his cousin. He sent a quiet connection request, but life moved on until late 2022, when Pavin, temporarily in the Bay Area from Chicago for a wedding, officially met Rani. They matched instantly, and two dates quickly turned into four. Right before catching his flight back to Chicago after the holidays, Pavin asked Rani to make things official.
           </p>
 
           <p>
-            And he did. We started chatting, he asked for my number, and then we went our separate ways.
-            I was sure I&apos;d never hear from him again. I thought about him now and then, but eventually
-            he just became another &ldquo;missed connection.&rdquo;
+            Their first year was built on flights between San Francisco and Chicago, proving that two thousand miles was nothing when the connection was that effortless. Between long-distance airport reunions, they found their rhythm in the simple things: blasting Punjabi music in the car, grabbing In-N-Out followed by boba on Friday nights, and dancing in the living room where nobody else could witness their questionable moves. They balance each other out in all the right ways, even if Pavin loves extra spice and Rani prefers to steer clear of heat entirely.
           </p>
 
           <p>
-            Then, a few months later, out of nowhere, he messaged me, <em>&ldquo;Happy New Year.&rdquo;</em> From
-            there, it was like nothing had ever changed.
+            Chicago and Soho House naturally became central to their relationship. On December 12, 2025, Pavin brought Rani to the private screening room under the guise of an exclusive "chef’s tasting." Instead of dinner, the lights dimmed for a twelve-minute film chronicling their favorite memories, leading to Pavin on one knee with a ring in hand. She said yes, the secret photographer caught it all, and they spent the rest of that snowy holiday weekend celebrating in the city where it all came together.
           </p>
         </div>
 
@@ -84,7 +79,7 @@ export default function StorySection() {
               Early Days
             </p>
             <h3 className="font-serif text-xl text-charcoal font-medium mt-1">
-              Early Days
+              First Christmas
             </h3>
           </div>
         </div>
@@ -126,7 +121,7 @@ export default function StorySection() {
               The Proposal
             </p>
             <h3 className="font-serif text-xl text-charcoal font-medium mt-1">
-              The Proposal
+              In their favorite city, Chicago
             </h3>
           </div>
         </div>

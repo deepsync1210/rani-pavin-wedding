@@ -27,7 +27,8 @@ export default function RsvpForm() {
     zipCode: "",
     country: "United States",
     guestCount: 2,
-    eventsAttending: ["Anand Karaj & Langar", "Wedding Reception"],
+    eventsAttending: ["Morning Wedding Ceremony", "Evening Reception"],
+    eventComments: "",
     dietaryRestrictions: ["None"],
     customDietary: "",
     songRequest: "",
@@ -102,7 +103,10 @@ export default function RsvpForm() {
       zipCode: formData.zipCode.trim(),
       country: formData.country.trim(),
       guestCount: Number(formData.guestCount),
-      eventsAttending: formData.eventsAttending.join(", ") || "None specified",
+      eventsAttending: formData.eventComments.trim()
+        ? `${formData.eventsAttending.join(", ")} (Notes: ${formData.eventComments.trim()})`
+        : formData.eventsAttending.join(", ") || "None specified",
+      eventComments: formData.eventComments.trim(),
       dietaryRestrictions: [
         ...formData.dietaryRestrictions.filter((d) => d !== "None"),
         formData.customDietary.trim(),
@@ -110,7 +114,12 @@ export default function RsvpForm() {
         .filter(Boolean)
         .join(", ") || "None",
       songRequest: formData.songRequest.trim(),
-      notes: formData.notes.trim(),
+      notes: [
+        formData.eventComments.trim() ? `Attendance Notes: ${formData.eventComments.trim()}` : "",
+        formData.notes.trim() ? `Blessings: ${formData.notes.trim()}` : "",
+      ]
+        .filter(Boolean)
+        .join(" | "),
     };
 
     try {
@@ -207,7 +216,7 @@ export default function RsvpForm() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Jasbir Singh Virdee"
+                    placeholder="e.g. Pavin Singh Virdee"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
@@ -221,7 +230,7 @@ export default function RsvpForm() {
                   <input
                     type="email"
                     required
-                    placeholder="e.g. jasbir@example.com"
+                    placeholder="e.g. pavin@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
@@ -235,7 +244,7 @@ export default function RsvpForm() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. (408) 555-0199"
+                    placeholder="e.g. (123) 456-7899"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
@@ -252,7 +261,7 @@ export default function RsvpForm() {
                   <span>Physical Mailing Address</span>
                 </h3>
                 <p className="text-xs text-mutedText mt-0.5 font-light">
-                  Required so we can mail your formal printed wedding invitation suite!
+                  So we can mail your formal printed wedding invitation!
                 </p>
               </div>
 
@@ -265,7 +274,7 @@ export default function RsvpForm() {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. 123 Blossom Hill Rd"
+                      placeholder="e.g. 123 Disney Way"
                       value={formData.streetAddress}
                       onChange={(e) => setFormData({ ...formData, streetAddress: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-sm text-charcoal focus:outline-none focus:border-navy transition-colors"
@@ -370,8 +379,8 @@ export default function RsvpForm() {
                   <label className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">
                     Events You Plan to Attend (June 19, 2027)
                   </label>
-                  <div className="space-y-2">
-                    {["Anand Karaj & Langar", "Wedding Reception"].map((evt) => (
+                  <div className="space-y-2 mb-3">
+                    {["Morning Wedding Ceremony", "Evening Reception"].map((evt) => (
                       <label key={evt} className="flex items-center space-x-2.5 text-xs sm:text-sm text-charcoal cursor-pointer">
                         <input
                           type="checkbox"
@@ -382,6 +391,17 @@ export default function RsvpForm() {
                         <span>{evt}</span>
                       </label>
                     ))}
+                  </div>
+
+                  {/* Open text comment box per user feedback (img2) */}
+                  <div className="mt-2.5">
+                    <input
+                      type="text"
+                      placeholder="Additional attendance comments, guest names, or notes..."
+                      value={formData.eventComments}
+                      onChange={(e) => setFormData({ ...formData, eventComments: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-background border border-borderLight text-xs sm:text-sm text-charcoal focus:outline-none focus:border-navy transition-colors placeholder:text-mutedText/60"
+                    />
                   </div>
                 </div>
               </div>
@@ -469,9 +489,9 @@ export default function RsvpForm() {
                   </>
                 )}
               </button>
-              <p className="text-center text-[11px] text-mutedText mt-3 font-light">
+              {/* <p className="text-center text-[11px] text-mutedText mt-3 font-light">
                 Directly submitted to Rani &amp; Pavin&apos;s Master Planning Sheet. Zero spam, purely for wedding coordination.
-              </p>
+              </p> */}
             </div>
           </form>
         )}

@@ -30,7 +30,7 @@ export default function RegistrySection() {
         <div className="inline-flex items-center space-x-2 text-champagne mb-3">
           <Sparkles className="w-4 h-4" />
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-navy">
-            Traditional Shagun &amp; Registry
+            Shagun &amp; Registry
           </span>
           <Sparkles className="w-4 h-4" />
         </div>
@@ -43,7 +43,7 @@ export default function RegistrySection() {
         </p>
       </div>
 
-      {/* Purpose Statement Card */}
+      {/* Purpose Statement Card
       <div className="max-w-3xl mx-auto bg-surface/85 rounded-3xl p-6 sm:p-8 border border-borderLight shadow-xs text-center mb-16">
         <div className="w-12 h-12 rounded-full bg-white border border-champagne flex items-center justify-center mx-auto mb-4 text-navy">
           <Heart className="w-5 h-5 text-navy fill-navy/20" />
@@ -59,7 +59,7 @@ export default function RegistrySection() {
           To bypass credit card processing surcharges and third-party fees, you may send your blessings directly
           via Venmo or Zelle below, or in person during the celebration.
         </p>
-      </div>
+      </div> */}
 
       {/* Funds Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
@@ -76,8 +76,7 @@ export default function RegistrySection() {
               Honeymoon Adventure Fund
             </h4>
             <p className="text-xs sm:text-sm text-charcoal/75 leading-relaxed font-light mb-6">
-              Helping us create unforgettable memories on our first journey as husband and wife — from sunset dinners
-              to coastal exploration.
+              Helping us create unforgettable memories on our first adventure as husband and wife.
             </p>
           </div>
           <div className="pt-4 border-t border-borderLight/60">
@@ -98,8 +97,7 @@ export default function RegistrySection() {
               New Home Foundation
             </h4>
             <p className="text-xs sm:text-sm text-charcoal/75 leading-relaxed font-light mb-6">
-              Supporting our long-term aspirations as we lay down permanent roots, design our living spaces, and host
-              many future family gatherings.
+              Supporting our long-term aspirations as we lay down permanent roots.
             </p>
           </div>
           <div className="pt-4 border-t border-borderLight/60">
@@ -109,10 +107,11 @@ export default function RegistrySection() {
       </div>
 
       {/* Direct Payment Channels (Venmo & Zelle Cards) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-center">
         {/* Venmo Card */}
         <div className="bg-surface rounded-2xl p-6 border border-borderLight shadow-xs flex flex-col justify-between">
-          <div className="mb-4">
+          {/* Pavin's Venmo */}
+          <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#008CFF] tracking-tight">Venmo</span>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-white px-2.5 py-1 rounded-full border border-borderLight">
@@ -121,43 +120,82 @@ export default function RegistrySection() {
             </div>
             <p className="text-xs text-charcoal/80 mb-2">Send directly to Pavin&apos;s Venmo account:</p>
             <p className="font-mono text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all">
-              @pavin-virdee
+              @pavin_virdee
             </p>
+            <div className="flex items-center space-x-3 pt-2">
+              <a
+                href="https://venmo.com/pavin_virdee"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-2.5 px-3 rounded-xl bg-[#008CFF] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-[#0070cc] transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
+              >
+                <span>Open Venmo</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <button
+                type="button"
+                onClick={() => handleCopy("pavin_virdee", "Pavin's Venmo")}
+                className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
+                title="Copy Pavin's Venmo Handle"
+              >
+                {copiedItem === "Pavin's Venmo" ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-navy" />
+                    <span className="text-navy font-semibold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-mutedText" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
-          <div className="flex items-center space-x-3 pt-2">
-            <a
-              href="https://venmo.com/pavin-virdee"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 py-2.5 px-3 rounded-xl bg-[#008CFF] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-[#0070cc] transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
-            >
-              <span>Open Venmo</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-            <button
-              onClick={() => handleCopy("pavin-virdee", "Venmo handle")}
-              className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
-              title="Copy Venmo Handle"
-            >
-              {copiedItem === "Venmo handle" ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-navy" />
-                  <span className="text-navy">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-mutedText" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
+          <div className="border-t border-borderLight/80 my-4" />
+
+          {/* Rani's Venmo */}
+          <div>
+            <p className="text-xs text-charcoal/80 mb-2">Send directly to Rani&apos;s Venmo account:</p>
+            <p className="font-mono text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all">
+              @ranisidhu
+            </p>
+            <div className="flex items-center space-x-3 pt-2">
+              <a
+                href="https://venmo.com/ranisidhu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-2.5 px-3 rounded-xl bg-[#008CFF] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-[#0070cc] transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
+              >
+                <span>Open Venmo</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <button
+                type="button"
+                onClick={() => handleCopy("ranisidhu", "Rani's Venmo")}
+                className="py-2.5 px-3 rounded-xl bg-white border border-borderLight text-xs text-charcoal font-medium hover:bg-surface transition-colors flex items-center space-x-1"
+                title="Copy Rani's Venmo Handle"
+              >
+                {copiedItem === "Rani's Venmo" ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-navy" />
+                    <span className="text-navy font-semibold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-mutedText" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Zelle Card */}
-        <div className="bg-surface rounded-2xl p-6 border border-borderLight shadow-xs flex flex-col justify-between">
-          <div className="mb-4">
+        {/* Zelle Card — Vertically Centered alongside Venmo */}
+        <div className="bg-surface rounded-2xl p-6 sm:p-7 border border-borderLight shadow-xs md:self-center flex flex-col justify-center">
+          <div className="mb-5">
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-bold text-[#7414CA] tracking-tight">Zelle</span>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-mutedText bg-white px-2.5 py-1 rounded-full border border-borderLight">
@@ -165,20 +203,21 @@ export default function RegistrySection() {
               </span>
             </div>
             <p className="text-xs text-charcoal/80 mb-2">Transfer via banking app to couple&apos;s phone/email:</p>
-            <p className="font-mono text-xs sm:text-sm font-semibold text-charcoal bg-white px-3 py-2 rounded-lg border border-borderLight select-all break-all">
-              pavin.virdee@gmail.com
+            <p className="font-mono text-xs sm:text-sm font-semibold text-charcoal bg-white px-3 py-2.5 rounded-lg border border-borderLight select-all break-all">
+              pavinvirdee@gmail.com
             </p>
           </div>
 
           <div className="pt-2">
             <button
-              onClick={() => handleCopy("pavin.virdee@gmail.com", "Zelle email")}
+              type="button"
+              onClick={() => handleCopy("pavinvirdee@gmail.com", "Zelle email")}
               className="w-full py-2.5 px-3 rounded-xl bg-[#7414CA] text-white text-xs uppercase tracking-wider font-medium hover:bg-[#600fb0] transition-colors flex items-center justify-center space-x-2 shadow-2xs"
             >
               {copiedItem === "Zelle email" ? (
                 <>
                   <Check className="w-3.5 h-3.5" />
-                  <span>Copied Zelle Email to Clipboard!</span>
+                  <span>Copied Zelle Recipient to Clipboard!</span>
                 </>
               ) : (
                 <>

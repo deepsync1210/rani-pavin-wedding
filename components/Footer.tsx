@@ -13,7 +13,7 @@ export default function Footer() {
 
         {/* Names */}
         <h3 className="heading-display text-2xl sm:text-3xl text-charcoal font-normal tracking-wide">
-          Rani Sidhu &amp; Pavin Virdee
+          Rani Kaur Sidhu &amp; Pavin Singh Virdee
         </h3>
 
         <p className="font-serif text-sm sm:text-base text-mutedText italic mt-1 mb-4">
@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Wedding Hashtag */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white border border-borderLight text-xs tracking-widest uppercase text-navy font-medium mb-8">
           <Sparkles className="w-3.5 h-3.5 text-champagne" />
-          <span>#RaniFoundHerPavin</span>
+          <span>#Pani2027</span>
           <Sparkles className="w-3.5 h-3.5 text-champagne" />
         </div>
 

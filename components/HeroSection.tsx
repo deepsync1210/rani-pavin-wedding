@@ -13,6 +13,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Calendar, MapPin, ChevronDown, Heart, Sparkles } from "lucide-react";
+import { LotusMotif, GarlandFlourish, CornerFiligree, TapestryWatermark } from "./FloralMotifs";
 
 interface TimeLeft {
   days: number;
@@ -74,20 +75,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-navy/15 mix-blend-multiply" />
         {/* Subtle romantic blush warmth */}
         <div className="absolute inset-0 bg-gradient-to-r from-blush/20 via-transparent to-blush/20 pointer-events-none" />
+        <TapestryWatermark />
       </div>
 
       {/* Main Content Container */}
       <div className="relative max-w-4xl mx-auto text-center z-10 flex flex-col items-center">
-        {/* Sacred Gurmukhi Inscription */}
-        <div className="mb-4 inline-flex flex-col items-center animate-fade-in">
-          <span className="text-sm sm:text-base font-serif tracking-[0.2em] text-champagne-dark font-medium mb-1">
-            ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
-          </span>
-          <span className="text-xs sm:text-sm font-serif italic text-navy/90 tracking-wider">
-            &ldquo;ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ&rdquo; &bull; One Light in Two Bodies
-          </span>
-        </div>
-
         {/* Save The Date Pill */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-champagne/80 bg-white/90 backdrop-blur-md mb-6 animate-fade-in shadow-xs">
           <Heart className="w-3.5 h-3.5 text-champagne fill-champagne/30" />
@@ -105,10 +97,20 @@ export default function HeroSection() {
           Pavin Virdee
         </h1>
 
-        {/* Subtitle */}
-        <p className="font-serif text-lg sm:text-2xl text-charcoal/90 italic font-light max-w-2xl mx-auto mb-8">
-          Celebrating the Union of Two Families
-        </p>
+        {/* Sacred Gurmukhi Inscription & Floral Flourish */}
+        <div className="max-w-2xl mx-auto mb-8 flex flex-col items-center animate-fade-in">
+          <div className="flex items-center space-x-3 mb-1.5">
+            <LotusMotif className="w-5 h-5 text-champagne hidden sm:block" />
+            <span className="text-base sm:text-lg font-serif tracking-[0.25em] text-champagne-dark font-medium">
+              ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ
+            </span>
+            <LotusMotif className="w-5 h-5 text-champagne hidden sm:block" />
+          </div>
+          <p className="text-xs sm:text-sm font-serif italic text-navy/90 tracking-wider">
+            ਏਕ ਜੋਤਿ ਦੁਇ ਮੂਰਤੀ &bull; One Light in Two Bodies
+          </p>
+          <GarlandFlourish className="w-40 sm:w-52 h-5 text-champagne/75 mt-2" />
+        </div>
 
         {/* Date & Exact Location Pill */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-charcoal/85 font-medium mb-10">
@@ -123,7 +125,9 @@ export default function HeroSection() {
         </div>
 
         {/* Live Countdown Timer */}
-        <div className="w-full max-w-xl bg-surface/85 backdrop-blur-md rounded-3xl p-6 border border-champagne/60 shadow-sm mb-10">
+        <div className="relative w-full max-w-xl bg-surface/85 backdrop-blur-md rounded-3xl p-6 border border-champagne/60 shadow-sm mb-10 overflow-hidden">
+          <CornerFiligree className="absolute top-2 left-2 w-6 h-6 text-champagne/40 pointer-events-none" />
+          <CornerFiligree className="absolute top-2 right-2 w-6 h-6 text-champagne/40 pointer-events-none rotate-90" />
           <p className="text-[11px] uppercase tracking-[0.2em] text-mutedText font-semibold mb-4 text-center">
             Countdown to the Big Day
           </p>

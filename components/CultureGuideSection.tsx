@@ -68,10 +68,9 @@ export default function CultureGuideSection() {
       icon: "🍛",
       summary: "A warm, delicious, vegetarian meal served with unconditional hospitality.",
       details:
-        "Instituted by Guru Nanak Dev Ji, Langar is a free vegetarian feast prepared by volunteers and served to all people regardless of religion, background, ethnicity, or social standing. Everyone sits side-by-side in rows on the floor to symbolize our collective equality.",
+        "Instituted by Guru Nanak Dev Ji, Langar is a free vegetarian feast served to all, symbolizing our collective equality.",
       tips: [
-        "All food in Langar is strictly vegetarian (often vegan-friendly).",
-        "Chairs and tables are available in the Langar hall for those who need them.",
+        "All food in Langar is strictly vegetarian (often vegan-friendly)."
       ],
     },
   ];

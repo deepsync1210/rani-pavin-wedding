@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import PasswordGate from "@/components/PasswordGate";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -67,7 +68,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${plusJakartaSans.variable}`}>
       <body className="min-h-screen bg-background text-charcoal antialiased selection:bg-navy selection:text-background">
-        {children}
+        <PasswordGate>
+          {children}
+        </PasswordGate>
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ import RegistrySection from "@/components/RegistrySection";
 import RsvpForm from "@/components/RsvpForm";
 import MusicPlayer from "@/components/MusicPlayer";
 import Footer from "@/components/Footer";
+import { TapestryWatermark, GarlandFlourish } from "@/components/FloralMotifs";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,7 +21,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background relative selection:bg-navy selection:text-background">
+    <main className="min-h-screen bg-background relative selection:bg-navy selection:text-background overflow-x-hidden">
+      {/* Subtle luxury tapestry watermark throughout the entire portal */}
+      <TapestryWatermark />
+
       {/* Sticky Top Navigation */}
       <Navbar isPlaying={isPlaying} toggleAudio={toggleAudio} />
 
@@ -39,8 +43,12 @@ export default function Home() {
       {/* Travel & Where to Stay */}
       <TravelSection />
 
-      {/* Zero-Fee Sagan & Registry */}
+      {/* Shagun & Registry */}
       <RegistrySection />
+
+      <div className="flex justify-center py-2">
+        <GarlandFlourish className="w-36 sm:w-48 h-4 text-champagne/60" />
+      </div>
 
       {/* Soft RSVP & Physical Mailing Address Form */}
       <RsvpForm />

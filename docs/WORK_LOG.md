@@ -75,11 +75,37 @@
    - Removed generic quotes, card subtext, and bottom signature circle.
 5. **Schedule & Venues**:
    - Removed private ceremony banner and timeline flow breakdowns.
-   - Morning Ceremony: **Sikh Gurdwara San Jose** (`3636 Murillo Ave, San Jose, CA 95148`) — [Google Maps](https://maps.app.goo.gl/ipyjwzuP9xgx9JDq8).
+   - Morning Ceremony: **Sikh Gurdwara San Jose** (`3636 Gurdwara Ave, San Jose, CA 95148`) — [Google Maps](https://maps.app.goo.gl/ipyjwzuP9xgx9JDq8).
    - Reception: **Atria Banquet Hall & Event Center** (`113 Bernal Rd, San Jose, CA 95119`) — [Google Maps](https://maps.app.goo.gl/5QNZdG3qEuojFZGV9).
 6. **Registry & Forms**:
    - Updated "Sagan" to **"Shagun"** throughout.
    - Synchronized all form states, culture guides, and travel cards to the new Navy & Blush design language.
+
+---
+
+## Work Log: Revision 1.3 (Floral Motifs, Zelle Centering, RSVP Comments & Passcode Gate)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Password Protection Gate (`matcha`)**:
+   - Built custom branded client/cookie authentication guard `components/PasswordGate.tsx` in Next.js.
+   - Requires passcode `matcha` (case-insensitive) with 30-day session memory in cookies and localStorage.
+   - Auto-unlock support via URL query parameter (`?pw=matcha`) for seamless physical invitation QR code scans.
+2. **Visuals, Florals & Tapestry Textures**:
+   - Built `components/FloralMotifs.tsx` featuring `LotusMotif`, `GarlandFlourish`, `CornerFiligree`, and `TapestryWatermark`.
+   - Injected subtle Mughal jaali / Indian wedding trellis lattice background texture across the entire portal.
+   - Added golden lotus crest and garland flourishes framing the Gurmukhi wedding blessing and section dividers.
+3. **Registry Fixes & Vertical Alignment (Img 1)**:
+   - Vertically centered the Zelle card with `items-center` on the grid and `md:self-center flex flex-col justify-center`.
+   - Fixed independent copy triggers for Pavin's Venmo (`@pavin_virdee`), Rani's Venmo (`@ranisidhu`), and Zelle (`pavinvirdee@gmail.com`).
+4. **RSVP Open Text Comments (Img 2)**:
+   - Added open text comment input box under the "Events You Plan to Attend" checkboxes.
+   - Mapped `eventComments` into form state, API payload, and Google Sheets notes synchronization.
+5. **Code & Hydration Audit**:
+   - Resolved React DOM hydration mismatch caused by `<p>` wrapping `<div>` in `HeroSection.tsx`.
+   - Synchronized default `eventsAttending` checkboxes to match new ceremony titles.
+   - Balanced lodging card grid in `TravelSection.tsx` for 2 featured hotels.
 
 ---
 
