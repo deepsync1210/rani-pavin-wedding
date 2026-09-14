@@ -141,7 +141,25 @@
    - Adjusted object position from `object-top` to `object-[center_62%]`, centering Rani and Pavin squarely in the frame.
 3. **Password Gate Polish**:
    - Cleaned passcode input placeholder strictly to `"Enter passcode"`, removing any explicit password hints.
-   - Tuned global jaali tapestry watermark opacity to `18%` for subtle luxury.
+
+---
+
+## Work Log: Revision 1.6 (Hero Couple Photo Restoration, Watermark Layer Isolation & Card Opacity)
+**Date**: September 13, 2026  
+**Git Branch**: `main`
+
+### Summary of Objectives
+1. **Hero Landing Couple Photo Restored & Vivid (Img 1)**:
+   - Removed the heavy milky white wash overlay (`bg-background/55`) and jaali pattern from the hero background so the full-resolution wedding portrait (`/images/hero_proposal.jpg`) shines through with vibrant clarity.
+   - Refined hero card styling to a delicate translucent glass frame (`bg-white/25 border border-white/60`) with corner filigrees, allowing Rani and Pavin's portrait to remain completely visible.
+   - Preserved crisp contrast and text readability with high-legibility typography, drop shadows, and solid pill badges for Save-The-Date, Gurmukhi inscription, and Date/Location.
+2. **Fixed Watermark Stacking Bug & Card Readability (Img 2)**:
+   - Solved CSS stacking context bug by moving `TapestryWatermark` in `app/page.tsx` to a fixed background layer with negative z-index (`fixed inset-0 -z-10 pointer-events-none`).
+   - Completely eliminated watermark lines bleeding through the Story narrative text and photo caption cards.
+   - Verified 100% solid, crisp opaque fills (`bg-white`) on all text containers across the site.
+3. **Site-Wide Background Consistency**:
+   - Removed solid `bg-[#FAF8F5]` fills from `ScheduleSection` and `TravelSection` outer wrappers.
+   - Ensured the Mughal jaali trellis pattern is seamlessly and consistently visible across all section gutters site-wide, with the Hero photo landing being the single intentional exception.
 
 ---
 

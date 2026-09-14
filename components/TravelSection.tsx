@@ -64,7 +64,7 @@ export default function TravelSection() {
   ];
 
   return (
-    <section id="travel" className="py-24 bg-[#FAF8F5] border-t border-borderLight relative">
+    <section id="travel" className="py-24 border-t border-borderLight/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

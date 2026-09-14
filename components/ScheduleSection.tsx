@@ -54,7 +54,7 @@ export default function ScheduleSection() {
   };
 
   return (
-    <section id="schedule" className="py-24 bg-[#FAF8F5] border-y border-borderLight relative">
+    <section id="schedule" className="py-24 border-y border-borderLight/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
